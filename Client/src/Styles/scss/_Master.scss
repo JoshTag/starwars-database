@@ -1,0 +1,59 @@
+// Fonts
+
+@font-face{
+  font-family: "Ubuntu", sans-serif;
+  src: url('../../Assets/Fonts/Ubuntu-Regular.ttf') format('ttf');
+}
+
+@font-face{
+  font-family: "Starjedi";
+  src: url('../../Assets/Fonts/Starjedi.ttf') format('truetype');
+}
+
+
+// Variables 
+
+$site-font-starwars: "Starjedi", sans-serif;
+$site-font: "Ubuntu", sans-serif;
+
+$colour-black: #000000;
+$colour-yellow: #FFE81F;
+$colour-white: #FFFFFF;
+$colour-grey: #383838;
+
+
+// Mixins
+
+@mixin tablet {
+  @media (min-width: 48rem) {
+      @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 64rem) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 90rem) {
+      @content;
+  }
+}
+
+@mixin site-font {
+  font-family: $site-font-starwars;
+  color: $colour-yellow;
+  font-weight: 400;
+  letter-spacing: .1rem;
+}
+
+
+*{
+  margin: 0;
+}
+
+body {
+  @include site-font;
+}
