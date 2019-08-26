@@ -29,8 +29,8 @@ const postComment = (req, res, next) => {
   const { comment, name } = req.body;
   const newComment = {
     id: shortid.generate(),
-    comment,
     name,
+    comment,
     timestamp: new Date()
   };
   matchPeople.comments.push(newComment);

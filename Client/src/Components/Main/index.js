@@ -1,6 +1,4 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { useRoutes, A } from "hookrouter";
 
 const Main = () => {
   return (
