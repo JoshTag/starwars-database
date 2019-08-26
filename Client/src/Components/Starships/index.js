@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { A } from "hookrouter";
 
 const Starships = () => {
   const [starships, setStarships] = useState([]);
@@ -15,19 +15,18 @@ const Starships = () => {
 
   return (
     <div>
-      <Link to="/people">People</Link>
-      <Link to="/starships">Starships</Link>
-      <Link to="/vehicles">Vehicles</Link>
       <h2>Starships</h2>
       <div>
-        {loading === true ? (
-          <ul>
-            {starships.map((ship, index) => (
-              <li key={index}>
-                {ship.name}
-              </li>
-            ))}
-          </ul>
+      {loading === true ? (
+          <div>
+            {starships.map((ship, index) => {
+              return (
+                <A href={`/starships/${ship.id}`} key={index}>
+                  <h4>Name: {ship.name}</h4>
+                </A>
+              );
+            })}
+          </div>
         ) : (
           <p>LOADING...</p>
         )}

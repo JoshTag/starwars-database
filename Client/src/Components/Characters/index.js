@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-// import data from "../../Data/Data";
+import { A } from "hookrouter";
 
-const People = () => {
+const Characters = () => {
   const [people, setPeople] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -16,19 +15,18 @@ const People = () => {
 
   return (
     <div>
-      <Link to="/people">People</Link>
-      <Link to="/starships">Starships</Link>
-      <Link to="/vehicles">Vehicles</Link>
-      <h2>People</h2>
+      <h2>Characters</h2>
       <div>
         {loading === true ? (
-          <ul>
-            {people.map((person, index) => (
-              <li key={index}>
-                {person.name}
-              </li>
-            ))}
-          </ul>
+          <div>
+            {people.map((person, index) => {
+              return (
+                <A href={`/characters/${person.id}`} key={index}>
+                  <h4>Name: {person.name}</h4>
+                </A>
+              );
+            })}
+          </div>
         ) : (
           <p>LOADING...</p>
         )}
@@ -37,4 +35,4 @@ const People = () => {
   );
 };
 
-export default People;
+export default Characters;

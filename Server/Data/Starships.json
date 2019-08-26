@@ -17,8 +17,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T12:31:42.547000Z",
     "edited": "2017-04-19T10:56:06.685592Z",
-    "id": 15,
-    "comments": []
+    "id": 15
   },
   {
     "name": "Sentinel-class landing craft",
@@ -38,8 +37,7 @@
     "films": ["https://swapi.co/api/films/1/"],
     "created": "2014-12-10T15:48:00.586000Z",
     "edited": "2014-12-22T17:35:44.431407Z",
-    "id": 5,
-    "comments": []
+    "id": 5
   },
   {
     "name": "Death Star",
@@ -59,8 +57,7 @@
     "films": ["https://swapi.co/api/films/1/"],
     "created": "2014-12-10T16:36:50.509000Z",
     "edited": "2014-12-22T17:35:44.452589Z",
-    "id": 9,
-    "comments": []
+    "id": 9
   },
   {
     "name": "Millennium Falcon",
@@ -90,8 +87,7 @@
     ],
     "created": "2014-12-10T16:59:45.094000Z",
     "edited": "2014-12-22T17:35:44.464156Z",
-    "id": 10,
-    "comments": []
+    "id": 10
   },
   {
     "name": "Y-wing",
@@ -115,8 +111,7 @@
     ],
     "created": "2014-12-12T11:00:39.817000Z",
     "edited": "2014-12-22T17:35:44.479706Z",
-    "id": 11,
-    "comments": []
+    "id": 11
   },
   {
     "name": "X-wing",
@@ -145,8 +140,7 @@
     ],
     "created": "2014-12-12T11:19:05.340000Z",
     "edited": "2014-12-22T17:35:44.491233Z",
-    "id": 12,
-    "comments": []
+    "id": 12
   },
   {
     "name": "TIE Advanced x1",
@@ -166,8 +160,7 @@
     "films": ["https://swapi.co/api/films/1/"],
     "created": "2014-12-12T11:21:32.991000Z",
     "edited": "2014-12-22T17:35:44.549047Z",
-    "id": 13,
-    "comments": []
+    "id": 13
   },
   {
     "name": "Slave 1",
@@ -187,8 +180,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/5/"],
     "created": "2014-12-15T13:00:56.332000Z",
     "edited": "2014-12-22T17:35:44.716273Z",
-    "id": 21,
-    "comments": []
+    "id": 21
   },
   {
     "name": "Imperial shuttle",
@@ -212,8 +204,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T13:04:47.235000Z",
     "edited": "2014-12-22T17:35:44.795405Z",
-    "id": 22,
-    "comments": []
+    "id": 22
   },
   {
     "name": "EF76 Nebulon-B escort frigate",
@@ -233,8 +224,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T13:06:30.813000Z",
     "edited": "2014-12-22T17:35:44.848329Z",
-    "id": 23,
-    "comments": []
+    "id": 23
   },
   {
     "name": "Calamari Cruiser",
@@ -254,8 +244,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T10:54:57.804000Z",
     "edited": "2014-12-22T17:35:44.957852Z",
-    "id": 27,
-    "comments": []
+    "id": 27
   },
   {
     "name": "A-wing",
@@ -275,8 +264,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T11:16:34.542000Z",
     "edited": "2014-12-22T17:35:44.978754Z",
-    "id": 28,
-    "comments": []
+    "id": 28
   },
   {
     "name": "B-wing",
@@ -296,8 +284,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T11:18:04.763000Z",
     "edited": "2014-12-22T17:35:45.011193Z",
-    "id": 29,
-    "comments": []
+    "id": 29
   },
   {
     "name": "Republic Cruiser",
@@ -317,8 +304,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:01:31.488000Z",
     "edited": "2014-12-22T17:35:45.027308Z",
-    "id": 31,
-    "comments": []
+    "id": 31
   },
   {
     "name": "Naboo fighter",
@@ -342,8 +328,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:39:17.582000Z",
     "edited": "2014-12-22T17:35:45.079452Z",
-    "id": 39,
-    "comments": []
+    "id": 39
   },
   {
     "name": "Naboo Royal Starship",
@@ -363,8 +348,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:45:03.506000Z",
     "edited": "2014-12-22T17:35:45.091925Z",
-    "id": 40,
-    "comments": []
+    "id": 40
   },
   {
     "name": "Scimitar",
@@ -384,8 +368,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-20T09:39:56.116000Z",
     "edited": "2014-12-22T17:35:45.105522Z",
-    "id": 41,
-    "comments": []
+    "id": 41
   },
   {
     "name": "J-type diplomatic barge",
@@ -405,8 +388,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T11:05:51.237000Z",
     "edited": "2014-12-22T17:35:45.124386Z",
-    "id": 43,
-    "comments": []
+    "id": 43
   },
   {
     "name": "AA-9 Coruscant freighter",
@@ -426,8 +408,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T17:24:23.509000Z",
     "edited": "2014-12-22T17:35:45.135987Z",
-    "id": 47,
-    "comments": []
+    "id": 47
   },
   {
     "name": "Jedi starfighter",
@@ -450,8 +431,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/6/"],
     "created": "2014-12-20T17:35:23.906000Z",
     "edited": "2014-12-22T17:35:45.147746Z",
-    "id": 48,
-    "comments": []
+    "id": 48
   },
   {
     "name": "H-type Nubian yacht",
@@ -471,8 +451,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T17:46:46.847000Z",
     "edited": "2014-12-22T17:35:45.158969Z",
-    "id": 49,
-    "comments": []
+    "id": 49
   },
   {
     "name": "Star Destroyer",
@@ -496,8 +475,7 @@
     ],
     "created": "2014-12-10T15:08:19.848000Z",
     "edited": "2014-12-22T17:35:44.410941Z",
-    "id": 3,
-    "comments": []
+    "id": 3
   },
   {
     "name": "Trade Federation cruiser",
@@ -520,8 +498,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T19:40:21.902000Z",
     "edited": "2014-12-22T17:35:45.195165Z",
-    "id": 59,
-    "comments": []
+    "id": 59
   },
   {
     "name": "Theta-class T-2c shuttle",
@@ -541,8 +518,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T19:48:40.409000Z",
     "edited": "2014-12-22T17:35:45.208584Z",
-    "id": 61,
-    "comments": []
+    "id": 61
   },
   {
     "name": "T-70 X-wing fighter",
@@ -562,8 +538,7 @@
     "films": ["https://swapi.co/api/films/7/"],
     "created": "2015-04-17T06:58:50.614475Z",
     "edited": "2015-04-17T06:58:50.614528Z",
-    "id": 77,
-    "comments": []
+    "id": 77
   },
   {
     "name": "Rebel transport",
@@ -583,8 +558,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T12:34:52.264000Z",
     "edited": "2014-12-22T17:35:44.680838Z",
-    "id": 17,
-    "comments": []
+    "id": 17
   },
   {
     "name": "Droid control ship",
@@ -608,8 +582,7 @@
     ],
     "created": "2014-12-19T17:04:06.323000Z",
     "edited": "2014-12-22T17:35:45.042900Z",
-    "id": 32,
-    "comments": []
+    "id": 32
   },
   {
     "name": "Republic Assault ship",
@@ -629,8 +602,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:08:42.926000Z",
     "edited": "2014-12-22T17:35:45.171653Z",
-    "id": 52,
-    "comments": []
+    "id": 52
   },
   {
     "name": "Solar Sailer",
@@ -650,8 +622,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:37:56.969000Z",
     "edited": "2014-12-22T17:35:45.183075Z",
-    "id": 58,
-    "comments": []
+    "id": 58
   },
   {
     "name": "Republic attack cruiser",
@@ -671,7 +642,6 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T19:52:56.232000Z",
     "edited": "2014-12-22T17:35:45.224540Z",
-    "id": 63,
-    "comments": []
+    "id": 63
   }
 ]

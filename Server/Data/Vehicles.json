@@ -15,8 +15,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/1/"],
     "created": "2014-12-10T15:36:25.724000Z",
     "edited": "2014-12-22T18:21:15.523587Z",
-    "id": 4,
-    "comments": []
+    "id": 4
   },
   {
     "name": "T-16 skyhopper",
@@ -34,8 +33,7 @@
     "films": ["https://swapi.co/api/films/1/"],
     "created": "2014-12-10T16:01:52.434000Z",
     "edited": "2014-12-22T18:21:15.552614Z",
-    "id": 6,
-    "comments": []
+    "id": 6
   },
   {
     "name": "X-34 landspeeder",
@@ -53,8 +51,7 @@
     "films": ["https://swapi.co/api/films/1/"],
     "created": "2014-12-10T16:13:52.586000Z",
     "edited": "2014-12-22T18:21:15.583700Z",
-    "id": 7,
-    "comments": []
+    "id": 7
   },
   {
     "name": "TIE/LN starfighter",
@@ -76,8 +73,7 @@
     ],
     "created": "2014-12-10T16:33:52.860000Z",
     "edited": "2014-12-22T18:21:15.606149Z",
-    "id": 8,
-    "comments": []
+    "id": 8
   },
   {
     "name": "Snowspeeder",
@@ -98,8 +94,7 @@
     "films": ["https://swapi.co/api/films/2/"],
     "created": "2014-12-15T12:22:12Z",
     "edited": "2014-12-22T18:21:15.623033Z",
-    "id": 14,
-    "comments": []
+    "id": 14
   },
   {
     "name": "TIE bomber",
@@ -117,8 +112,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T12:33:15.838000Z",
     "edited": "2014-12-22T18:21:15.667730Z",
-    "id": 16,
-    "comments": []
+    "id": 16
   },
   {
     "name": "AT-AT",
@@ -136,8 +130,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T12:38:25.937000Z",
     "edited": "2014-12-22T18:21:15.714673Z",
-    "id": 18,
-    "comments": []
+    "id": 18
   },
   {
     "name": "AT-ST",
@@ -155,8 +148,7 @@
     "films": ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/3/"],
     "created": "2014-12-15T12:46:42.384000Z",
     "edited": "2014-12-22T18:21:15.761584Z",
-    "id": 19,
-    "comments": []
+    "id": 19
   },
   {
     "name": "Storm IV Twin-Pod cloud car",
@@ -174,8 +166,7 @@
     "films": ["https://swapi.co/api/films/2/"],
     "created": "2014-12-15T12:58:50.530000Z",
     "edited": "2014-12-22T18:21:15.783232Z",
-    "id": 20,
-    "comments": []
+    "id": 20
   },
   {
     "name": "Sail barge",
@@ -193,8 +184,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T10:44:14.217000Z",
     "edited": "2014-12-22T18:21:15.807906Z",
-    "id": 24,
-    "comments": []
+    "id": 24
   },
   {
     "name": "Bantha-II cargo skiff",
@@ -212,8 +202,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T10:48:03.208000Z",
     "edited": "2014-12-22T18:21:15.845988Z",
-    "id": 25,
-    "comments": []
+    "id": 25
   },
   {
     "name": "TIE/IN interceptor",
@@ -231,8 +220,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T10:50:28.225000Z",
     "edited": "2014-12-22T18:21:15.882388Z",
-    "id": 26,
-    "comments": []
+    "id": 26
   },
   {
     "name": "Imperial Speeder Bike",
@@ -253,8 +241,7 @@
     "films": ["https://swapi.co/api/films/3/"],
     "created": "2014-12-18T11:20:04.625000Z",
     "edited": "2014-12-22T18:21:15.920537Z",
-    "id": 30,
-    "comments": []
+    "id": 30
   },
   {
     "name": "Vulture Droid",
@@ -272,8 +259,7 @@
     "films": ["https://swapi.co/api/films/4/", "https://swapi.co/api/films/6/"],
     "created": "2014-12-19T17:09:53.584000Z",
     "edited": "2014-12-22T18:21:15.953870Z",
-    "id": 33,
-    "comments": []
+    "id": 33
   },
   {
     "name": "Multi-Troop Transport",
@@ -291,8 +277,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:12:04.400000Z",
     "edited": "2014-12-22T18:21:15.975171Z",
-    "id": 34,
-    "comments": []
+    "id": 34
   },
   {
     "name": "Armored Assault Tank",
@@ -310,8 +295,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:13:29.799000Z",
     "edited": "2014-12-22T18:21:15.984817Z",
-    "id": 35,
-    "comments": []
+    "id": 35
   },
   {
     "name": "Single Trooper Aerial Platform",
@@ -329,8 +313,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:15:09.511000Z",
     "edited": "2014-12-22T18:21:16.008594Z",
-    "id": 36,
-    "comments": []
+    "id": 36
   },
   {
     "name": "C-9979 landing craft",
@@ -348,8 +331,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:20:36.373000Z",
     "edited": "2014-12-22T18:21:16.033738Z",
-    "id": 37,
-    "comments": []
+    "id": 37
   },
   {
     "name": "Tribubble bongo",
@@ -370,8 +352,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-19T17:37:37.924000Z",
     "edited": "2014-12-22T18:21:16.072083Z",
-    "id": 38,
-    "comments": []
+    "id": 38
   },
   {
     "name": "Sith speeder",
@@ -389,8 +370,7 @@
     "films": ["https://swapi.co/api/films/4/"],
     "created": "2014-12-20T10:09:56.095000Z",
     "edited": "2014-12-22T18:21:16.095041Z",
-    "id": 42,
-    "comments": []
+    "id": 42
   },
   {
     "name": "Zephyr-G swoop bike",
@@ -408,8 +388,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T16:24:16.026000Z",
     "edited": "2014-12-22T18:21:16.117652Z",
-    "id": 44,
-    "comments": []
+    "id": 44
   },
   {
     "name": "Koro-2 Exodrive airspeeder",
@@ -427,8 +406,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T17:17:33.526000Z",
     "edited": "2014-12-22T18:21:16.140018Z",
-    "id": 45,
-    "comments": []
+    "id": 45
   },
   {
     "name": "XJ-6 airspeeder",
@@ -446,8 +424,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T17:19:19.991000Z",
     "edited": "2014-12-22T18:21:16.150194Z",
-    "id": 46,
-    "comments": []
+    "id": 46
   },
   {
     "name": "LAAT/i",
@@ -465,8 +442,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/6/"],
     "created": "2014-12-20T18:01:21.014000Z",
     "edited": "2014-12-22T18:21:16.181363Z",
-    "id": 50,
-    "comments": []
+    "id": 50
   },
   {
     "name": "LAAT/c",
@@ -484,8 +460,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:02:46.802000Z",
     "edited": "2014-12-22T18:21:16.229733Z",
-    "id": 51,
-    "comments": []
+    "id": 51
   },
   {
     "name": "Tsmeu-6 personal wheel bike",
@@ -503,8 +478,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T19:43:54.870000Z",
     "edited": "2014-12-22T18:21:16.422662Z",
-    "id": 60,
-    "comments": []
+    "id": 60
   },
   {
     "name": "Emergency Firespeeder",
@@ -522,8 +496,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T19:50:58.559000Z",
     "edited": "2014-12-22T18:21:16.450655Z",
-    "id": 62,
-    "comments": []
+    "id": 62
   },
   {
     "name": "Droid tri-fighter",
@@ -541,8 +514,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:05:19.992000Z",
     "edited": "2014-12-22T18:21:16.478901Z",
-    "id": 67,
-    "comments": []
+    "id": 67
   },
   {
     "name": "Oevvaor jet catamaran",
@@ -560,8 +532,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:20:53.931000Z",
     "edited": "2014-12-22T18:21:16.517049Z",
-    "id": 69,
-    "comments": []
+    "id": 69
   },
   {
     "name": "Raddaugh Gnasp fluttercraft",
@@ -579,8 +550,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:21:55.648000Z",
     "edited": "2014-12-22T18:21:16.547708Z",
-    "id": 70,
-    "comments": []
+    "id": 70
   },
   {
     "name": "Clone turbo tank",
@@ -598,8 +568,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:24:45.587000Z",
     "edited": "2014-12-22T18:21:16.571079Z",
-    "id": 71,
-    "comments": []
+    "id": 71
   },
   {
     "name": "Corporate Alliance tank droid",
@@ -617,8 +586,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:26:55.522000Z",
     "edited": "2014-12-22T18:21:16.612902Z",
-    "id": 72,
-    "comments": []
+    "id": 72
   },
   {
     "name": "Droid gunship",
@@ -636,8 +604,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:32:05.687000Z",
     "edited": "2014-12-22T18:21:16.643329Z",
-    "id": 73,
-    "comments": []
+    "id": 73
   },
   {
     "name": "AT-RT",
@@ -655,8 +622,7 @@
     "films": ["https://swapi.co/api/films/6/"],
     "created": "2014-12-20T20:47:49.189000Z",
     "edited": "2014-12-22T18:21:16.672821Z",
-    "id": 76,
-    "comments": []
+    "id": 76
   },
   {
     "name": "AT-TE",
@@ -674,8 +640,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/6/"],
     "created": "2014-12-20T18:10:07.560000Z",
     "edited": "2014-12-22T18:21:16.293771Z",
-    "id": 53,
-    "comments": []
+    "id": 53
   },
   {
     "name": "SPHA",
@@ -693,8 +658,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:12:32.315000Z",
     "edited": "2014-12-22T18:21:16.311761Z",
-    "id": 54,
-    "comments": []
+    "id": 54
   },
   {
     "name": "Flitknot speeder",
@@ -712,8 +676,7 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:15:20.312000Z",
     "edited": "2014-12-22T18:21:16.335005Z",
-    "id": 55,
-    "comments": []
+    "id": 55
   },
   {
     "name": "Neimoidian shuttle",
@@ -731,8 +694,7 @@
     "films": ["https://swapi.co/api/films/5/", "https://swapi.co/api/films/6/"],
     "created": "2014-12-20T18:25:44.912000Z",
     "edited": "2014-12-22T18:21:16.366134Z",
-    "id": 56,
-    "comments": []
+    "id": 56
   },
   {
     "name": "Geonosian starfighter",
@@ -750,7 +712,6 @@
     "films": ["https://swapi.co/api/films/5/"],
     "created": "2014-12-20T18:34:12.541000Z",
     "edited": "2014-12-22T18:21:16.390980Z",
-    "id": 57,
-    "comments": []
+    "id": 57
   }
 ]

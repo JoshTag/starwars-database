@@ -5,9 +5,11 @@ const shortid = require('shortid');
 
 const getPeople = (req, res) => {
   res.json(
-    people.map(({ id, name }) => ({
+    people.map(({ id, name, birth_year, gender }) => ({
       id,
-      name
+      name,
+      birth_year,
+      gender
     }))
   );
 };
@@ -16,7 +18,7 @@ const getSingleperson = (req, res) => {
   const findID = people.find(person => person.id == req.params.id);
 
   if (!findID) {
-    res.status(404).json({ error: "No ship Found With That ID" });
+    res.status(404).json({ error: "No Person Found With That ID" });
   }
 
   res.json(findID);
