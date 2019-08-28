@@ -1,0 +1,62 @@
+@import "../../Styles/scss/Master";
+
+.character-Comments {
+  margin-top: 20px;
+
+  &__header {
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    margin-bottom: 20px;
+  }
+
+  &__form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  &__form > div > label {
+    font-family: $site-font;
+    margin-bottom: 5px;
+  }
+
+  &__form > :nth-child(1) > textarea {
+    height: 15px;
+    padding: 5px;
+  }
+
+  &__form > :nth-child(2) > textarea {
+    height: 50px;
+    padding: 5px;
+  }
+
+  &__button {
+    color: $colour-yellow;
+    border: solid 2px $colour-yellow;
+    background: black;
+    padding: 1rem;
+    width: 10rem;
+    font-size: 1rem;
+    font-family: $site-font-starwars;
+  }
+
+  &__button:hover {
+    cursor: pointer;
+    background: $colour-yellow;
+    color: #000;
+    transition: .3s;
+  }
+}
+
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    margin-bottom: 10px;
+    font-family: $site-font;
+  }
+}

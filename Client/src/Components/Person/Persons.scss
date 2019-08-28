@@ -1,0 +1,17 @@
+@import "../../Styles/scss/Master";
+
+.person-Container {
+  padding: 16px;
+  
+  &__header {
+    @include site-header;
+  }
+
+  > p {
+    font-family: $site-font;
+  }  
+
+  &__comments {
+    margin-top: 20px;
+  }
+}

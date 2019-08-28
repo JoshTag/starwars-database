@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./CharacterComments.scss";
 
 const CommentSection = ({ comments, props }) => {
   const handleSubmit = e => {
@@ -23,31 +24,44 @@ const CommentSection = ({ comments, props }) => {
 
     e.target.reset();
     alert("Comment Submitted");
-    window.location.reload();
+    // window.location.reload();
   };
 
+  const formatDate = (date) => {
+    let newDate = new Date (date)
+    return ( newDate.getMonth() + 1 ) + "/" + newDate.getDate() + "/" + newDate.getFullYear()
+  }
+
   return (
-    <>
-      <h3>Comments</h3>
-      <form onSubmit={handleSubmit}>
-        <input name="name" required placeholder="Enter Name..."></input>
-        <input name="comment" required placeholder="Enter Comment..."></input>
-        <button type="submit">Submit</button>
+    <section className="character-Comments">
+      <h3 className="character-Comments__header">Comments</h3>
+      <form className="character-Comments__form" onSubmit={handleSubmit}>
+        <div className="character-Comments__form">
+          <label>Name</label>
+          <textarea id="name-input" name="name" required placeholder="Enter Name..."></textarea>
+        </div>
+        <div className="character-Comments__form">
+          <label>Comment</label>
+          <textarea id="comment-input" name="comment" required placeholder="Enter Comment..."></textarea>
+        </div>
+        <button className="character-Comments__button" type="submit">Submit</button>
       </form>
+      <div className="comment-container">
       {comments ? (
         comments.map((comment, index) => {
           return (
             <div key={index}>
-              <p>Time: {comment.timestamp}</p>
               <p>Name: {comment.name}</p>
               <p>Comment: {comment.comment}</p>
+              <p>{formatDate(comment.timestamp)}</p>
             </div>
           );
         })
       ) : (
         <div>LOADING...</div>
       )}
-    </>
+      </div>
+    </section>
   );
 };
 

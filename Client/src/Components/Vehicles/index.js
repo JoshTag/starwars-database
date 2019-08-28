@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { A } from "hookrouter";
+import { A } from "hookrouter"
 
 const Vehicles = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -14,24 +14,26 @@ const Vehicles = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Vehicles</h2>
-      <div>
+    <section className="section-Container">
+      <h2 className="section-Container__header">vehicles</h2>
       {loading === true ? (
-          <div>
-            {vehicles.map((vehicle, index) => {
-              return (
-                <A href={`/vehicles/${vehicle.id}`} key={index}>
-                  <h4>Name: {vehicle.name}</h4>
+        <ul className="section-Container__list">
+          {vehicles.map((vehicle, index) => {
+            return (
+              <li className="section-Container__list__item" key={index}>
+                <A className="section-Container__list__item--link" href={`/vehicles/${vehicle.id}`}>
+                  <p>{vehicle.name}</p>
+                  <p>Model: {vehicle.model}</p>
+                  <p>Class: {vehicle.vehicle_class}</p>
                 </A>
-              );
-            })}
-          </div>
-        ) : (
-          <p>LOADING...</p>
-        )}
-      </div>
-    </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>LOADING...</p>
+      )}
+    </section>
   );
 };
 

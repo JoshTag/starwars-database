@@ -14,19 +14,21 @@ const Planets = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Planets</h2>
+    <div className="section-Container">
+      <h2 className="section-Container__header">Planets</h2>
       <div>
         {loading === true ? (
-          <div>
+          <ul className="section-Container__list">
             {planets.map((planet, index) => {
               return (
-                <A href={`/planets/${planet.id}`} key={index}>
-                  <h4>Name: {planet.name}</h4>
+                <li className="section-Container__list__item" key={index}>
+                <A className="section-Container__list__item--link" href={`/planets/${planet.id}`} key={index}>
+                  <p id="planet-list-item">{planet.name}</p>
                 </A>
+                </li>
               );
             })}
-          </div>
+          </ul>
         ) : (
           <p>LOADING...</p>
         )}

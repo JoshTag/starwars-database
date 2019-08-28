@@ -25,13 +25,16 @@ const getSingleperson = (req, res) => {
 };
 
 const postComment = (req, res, next) => {
+  let date = new Date()
+  let timestamp = date.getTime()
+
   const matchPeople = people.find(person => person.id == req.params.id);
   const { comment, name } = req.body;
   const newComment = {
     id: shortid.generate(),
     name,
     comment,
-    timestamp: new Date()
+    timestamp: timestamp
   };
   matchPeople.comments.push(newComment);
   res.json(matchPeople);

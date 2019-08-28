@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CommentSection from "../CharacterComments";
+import "../../Styles/scss/_Master.scss";
 
 const Person = (props) => {
   const [character, setCharacter] = useState({});
@@ -18,8 +19,8 @@ const Person = (props) => {
   return (
     <>
       {loading === true ? (
-        <div>
-          <h3>Name: {character.name}</h3>
+        <div className="individual-Container">
+          <h3 className="individual-Container__header">{character.name}</h3>
           <p>Height: {character.height}</p>
           <p>Gender: {character.gender}</p>
           <p>Mass: {character.mass}</p>

@@ -43,12 +43,15 @@ $colour-grey: #383838;
 }
 
 @mixin site-font {
-  font-family: $site-font-starwars;
+  font-family: $site-font-starwars, $site-font;
   color: $colour-yellow;
-  font-weight: 400;
-  letter-spacing: .1rem;
+  letter-spacing: 1px;
 }
 
+@mixin site-header {
+  font-size: 2rem;
+  margin: 10px 0;
+}
 
 *{
   margin: 0;
@@ -56,4 +59,51 @@ $colour-grey: #383838;
 
 body {
   @include site-font;
+  background: black;
+}
+
+
+.section-Container {
+  padding: 0 16px;
+
+  &__header {
+    @include site-header;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &__item {
+      padding: 5px;
+      margin: 10px 0;
+      border-radius: .25rem;
+
+      &--link {
+        text-decoration: none;
+        color: $colour-yellow;
+
+        :nth-last-child(-n+2) {
+          font-family: $site-font
+        }
+      }
+    }
+  }
+}
+
+
+.individual-Container {
+  padding: 16px;
+  
+  &__header {
+    @include site-header;
+  }
+
+  > p {
+    font-family: $site-font;
+  }  
+}
+
+#planet-list-item {
+  font-family: $site-font-starwars;
 }

@@ -15,8 +15,8 @@ const Ship = (props) => {
   return (
     <>
       {loading === true ? (
-        <div>
-          <h3>Name: {vehicle.name}</h3>
+        <div className="individual-Container">
+          <h3 className="individual-Container__header">{vehicle.name}</h3>
           <p>Model: {vehicle.model}</p>
           <p>Manufacturer: {vehicle.manufacturer}</p>
           <p>Length: {vehicle.length}</p>

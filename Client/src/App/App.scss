@@ -1,0 +1,17 @@
+@import "../Styles/scss/Master";
+
+.linkContainer {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    text-decoration: none;
+    color: $colour-yellow;
+  }
+}

@@ -1,10 +1,11 @@
 import React from "react";
+import "./Main.scss"
 
 const Main = () => {
   return (
-    <div>
-      <h1>Star Wars Database</h1>
-    </div>
+    <section className="hero">
+      <h1 className="hero__header">Star Wars Database</h1>
+    </section>
   );
 };
 

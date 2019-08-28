@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { A } from "hookrouter";
+import "../../Styles/scss/_Master.scss"
 
 const Starships = () => {
   const [starships, setStarships] = useState([]);
@@ -14,24 +15,26 @@ const Starships = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Starships</h2>
-      <div>
+    <section className="section-Container">
+      <h2 className="section-Container__header">starships</h2>
       {loading === true ? (
-          <div>
-            {starships.map((ship, index) => {
-              return (
-                <A href={`/starships/${ship.id}`} key={index}>
-                  <h4>Name: {ship.name}</h4>
+        <ul className="section-Container__list">
+          {starships.map((ship, index) => {
+            return (
+              <li className="section-Container__list__item" key={index}>
+                <A className="section-Container__list__item--link" href={`/starships/${ship.id}`}>
+                  <p>{ship.name}</p>
+                  <p>Model: {ship.model}</p>
+                  <p>Class: {ship.starship_class}</p>
                 </A>
-              );
-            })}
-          </div>
-        ) : (
-          <p>LOADING...</p>
-        )}
-      </div>
-    </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>LOADING...</p>
+      )}
+    </section>
   );
 };
 

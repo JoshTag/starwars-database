@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { A } from "hookrouter";
+import { A } from "hookrouter"
+import "./Characters.scss"
 
 const Characters = () => {
   const [people, setPeople] = useState([]);
@@ -14,25 +15,28 @@ const Characters = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Characters</h2>
-      <div>
-        {loading === true ? (
-          <div>
-            {people.map((person, index) => {
-              return (
-                <A href={`/characters/${person.id}`} key={index}>
-                  <h4>Name: {person.name}</h4>
+    <section className="section-Container">
+      <h2 className="section-Container__header">Characters</h2>
+      {loading === true ? (
+        <ul className="section-Container__list">
+          {people.map((person, index) => {
+            return (
+              <li className="section-Container__list__item" key={index}>
+                <A className="section-Container__list__item--link" href={`/characters/${person.id}`}>
+                  <p>{(person.name).toLowerCase()}</p>
+                  <p>Birth Year: {person.birth_year}</p>
+                  <p>Gender: {person.gender}</p>
                 </A>
-              );
-            })}
-          </div>
-        ) : (
-          <p>LOADING...</p>
-        )}
-      </div>
-    </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <h4>LOADING...</h4>
+      )}
+    </section>
   );
 };
 
 export default Characters;
+

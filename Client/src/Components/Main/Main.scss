@@ -1,0 +1,14 @@
+@import "../../Styles/scss/Master";
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+
+  &__header {
+    font-size: 1.5rem;
+    position: relative;
+    top: -8rem;
+  }
+}

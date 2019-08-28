@@ -15,8 +15,8 @@ const Planet = (props) => {
   return (
     <>
       {loading === true ? (
-        <div>
-          <h3>Name: {planet.name}</h3>
+        <div className="individual-Container">
+          <h3 className="individual-Container__header">{planet.name}</h3>
           <p>Rotation Period: {planet.rotation_period}</p>
           <p>Orbital Period: {planet.orbital_period}</p>
           <p>Diameter: {planet.diameter}</p>
