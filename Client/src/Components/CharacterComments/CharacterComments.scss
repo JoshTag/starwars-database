@@ -9,6 +9,10 @@
 
   &__form {
     margin-bottom: 20px;
+
+    @include tablet {
+      width: 400px;
+    }
   }
 
   &__form > div {
@@ -25,11 +29,13 @@
   &__form > :nth-child(1) > textarea {
     height: 15px;
     padding: 5px;
+    resize: none;
   }
 
   &__form > :nth-child(2) > textarea {
     height: 50px;
     padding: 5px;
+    resize: none;
   }
 
   &__button {
@@ -39,7 +45,6 @@
     padding: 1rem;
     width: 10rem;
     font-size: 1rem;
-    font-family: $site-font-starwars;
   }
 
   &__button:hover {

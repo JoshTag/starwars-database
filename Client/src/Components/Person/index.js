@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CommentSection from "../CharacterComments";
 import "../../Styles/scss/_Master.scss";
+import "./Persons.scss"
 
 const Person = (props) => {
   const [character, setCharacter] = useState({});
@@ -20,6 +21,7 @@ const Person = (props) => {
     <>
       {loading === true ? (
         <div className="individual-Container">
+          <div className="individual-stars"/>
           <h3 className="individual-Container__header">{character.name}</h3>
           <p>Height: {character.height}</p>
           <p>Gender: {character.gender}</p>

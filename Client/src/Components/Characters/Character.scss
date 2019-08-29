@@ -1,162 +1,27 @@
-// Fonts
-
-@font-face {
-  font-family: "Ubuntu", sans-serif;
-  src: url("../../Assets/Fonts/Ubuntu-Regular.ttf") format("ttf");
+.img-one {
+  position: absolute;
+  height: 150px;
+  left: 70%;
+  top: 1000px;
 }
 
-@font-face {
-  font-family: "Starjedi";
-  src: url("../../Assets/Fonts/Starjedi.ttf") format("truetype");
-}
+.parralax-container {
+  position: absolute;
+  width: 80%;
+  height: 100%;
 
-// Variables
+  > div:nth-of-type(2) {
+    top: 1500px;
+  }
 
-$site-font-starwars: "Starjedi", sans-serif;
-$site-font: "Ubuntu", sans-serif;
-
-$colour-black: #000000;
-$colour-yellow: #ffe81f;
-$colour-white: #ffffff;
-$colour-grey: #383838;
-
-// Mixins
-
-@mixin tablet {
-  @media (min-width: 48rem) {
-    @content;
+  > div:nth-of-type(3) {
+    top: 3000px;
   }
 }
 
-@mixin laptop {
-  @media (min-width: 64rem) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: 90rem) {
-    @content;
-  }
-}
-
-@mixin site-font {
-  font-family: $site-font-starwars, $site-font;
-  color: $colour-yellow;
-  letter-spacing: 1px;
-}
-
-@mixin site-header {
-  font-size: 1.5rem;
-  margin: 10px 0;
-
-  @include tablet {
-    font-size: 2.5rem;
-  }
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  @include site-font;
-  background: #000000;
-}
-
-// Glabal CSS for Characters, Verhicles, Starships, and Planets
-.section-Container {
-  position: relative;
-  padding: 0 16px;
-
-  &__header {
-    @include site-header;
-    
-    @include tablet {
-      text-align: center;
-    }
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0 0 160px;
-
-    @include tablet {
-      width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    @include laptop {
-      width: 800px;
-    }
-
-    &__item {
-      padding: 5px;
-      margin: 10px 0;
-      border-radius: 0.25rem;
-      height: auto;
-      text-align: center;
-      z-index: 50;
-
-      @include tablet {
-        width: 40%;
-      }
-
-      &--link {
-        text-decoration: none;
-        color: $colour-yellow;
-
-        @include laptop {
-          font-size: 1.25rem;
-        }
-
-        :nth-last-child(-n + 2) {
-          font-family: $site-font;
-        }
-      }
-    }
-  }
-}
-
-.individual-Container {
-  padding: 16px;
-
-  @include tablet {
-    padding: 0;
-    width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  @include laptop {
-    width: 750px;
-  }
-
-  &__header {
-    @include site-header;
-    z-index: 50;
-  }
-
-  > p {
-    font-family: $site-font;
-  }
-}
-
-#planet-list-item {
-  font-family: $site-font-starwars;
-}
-
-.starParallax {
-  position: relative;
-}
-
-#parallax-star {
+.character-stars {
+  will-change: transform;
+  z-index: 10;
   width: 3px;
   height: 3px;
   background: transparent;
@@ -210,69 +75,5 @@ body {
     853px 807px #FFF, 853px 877px #FFF, 253px 407px #FFF, 873px 967px #FFF, 
     253px 407px #FFF, 500px 500px #FFF, 540px 500px #FFF, 560px 500px #FFF, 
     450px 450px #FFF, 560px 470px #FFF, 860px 490px #FFF, 860px 490px #FFF, 893px 268px #FFF , 1819px 666px #FFF , 366px 1985px #FFF , 1736px 1062px #FFF , 1124px 45px #FFF , 905px 1674px #FFF , 1570px 711px #FFF , 255px 1747px #FFF , 147px 1032px #FFF , 865px 1813px #FFF , 1721px 1461px #FFF , 202px 724px #FFF , 1860px 812px #FFF , 634px 1410px #FFF , 927px 1264px #FFF , 1648px 620px #FFF , 1915px 1309px #FFF , 731px 778px #FFF , 91px 1185px #FFF , 829px 1003px #FFF , 174px 1784px #FFF , 1094px 1874px #FFF , 1464px 484px #FFF , 1639px 1717px #FFF , 959px 573px #FFF , 1686px 1287px #FFF , 906px 356px #FFF , 970px 499px #FFF , 626px 890px #FFF , 1344px 1070px #FFF , 1351px 544px #FFF , 708px 68px #FFF , 1870px 130px #FFF , 556px 1270px #FFF , 1432px 618px #FFF , 769px 673px #FFF , 1289px 1410px #FFF , 1499px 1969px #FFF , 749px 1163px #FFF , 1198px 198px #FFF , 399px 133px #FFF , 1856px 1280px #FFF , 904px 194px #FFF , 973px 1107px #FFF , 1371px 1785px #FFF , 989px 1835px #FFF , 1043px 1517px #FFF , 787px 916px #FFF , 1635px 1155px #FFF , 752px 524px #FFF , 1926px 1279px #FFF , 1052px 1163px #FFF , 719px 1963px #FFF , 786px 519px #FFF , 1440px 500px #FFF , 156px 1265px #FFF , 1691px 429px #FFF , 1349px 1474px #FFF , 736px 459px #FFF , 248px 1678px #FFF , 1136px 510px #FFF , 1317px 10px #FFF , 1209px 1323px #FFF , 54px 469px #FFF , 730px 1939px #FFF , 960px 23px #FFF , 112px 941px #FFF , 1852px 1522px #FFF , 1993px 1972px #FFF , 265px 129px #FFF , 222px 1897px #FFF , 1766px 1804px #FFF , 1530px 1786px #FFF , 1045px 432px #FFF , 1916px 1980px #FFF , 309px 1780px #FFF , 1420px 559px #FFF , 1708px 103px #FFF , 324px 1407px #FFF , 1175px 943px #FFF , 80px 1221px #FFF , 1016px 1933px #FFF , 318px 560px #FFF , 190px 1489px #FFF , 1095px 892px #FFF , 1975px 1191px #FFF , 1197px 955px #FFF , 1482px 873px #FFF , 1912px 300px #FFF , 2000px 1636px #FFF , 1473px 1808px #FFF , 507px 192px #FFF , 924px 1300px #FFF , 1485px 1636px #FFF , 41px 1822px #FFF , 689px 120px #FFF , 769px 273px #FFF , 1039px 976px #FFF , 1057px 1520px #FFF , 1417px 1187px #FFF , 512px 1507px #FFF , 519px 45px #FFF , 1207px 1687px #FFF , 1824px 1488px #FFF , 1694px 31px #FFF , 1859px 52px #FFF , 1368px 268px #FFF , 190px 1404px #FFF , 940px 1003px #FFF , 167px 942px #FFF , 1641px 647px #FFF , 1051px 654px #FFF , 233px 1640px #FFF , 554px 511px #FFF , 1705px 1866px #FFF , 240px 1430px #FFF , 140px 668px #FFF , 648px 1617px #FFF , 252px 101px #FFF , 676px 1774px #FFF , 889px 1698px #FFF , 595px 853px #FFF , 249px 1768px #FFF , 1091px 1529px #FFF , 223px 839px #FFF , 239px 699px #FFF , 1547px 356px #FFF , 249px 1130px #FFF , 1209px 1946px #FFF , 1967px 1274px #FFF , 430px 298px #FFF , 1305px 134px #FFF , 156px 91px #FFF , 1712px 264px #FFF , 1256px 991px #FFF , 1887px 1844px #FFF , 1957px 1275px #FFF , 1718px 666px #FFF , 1090px 543px #FFF , 933px 1411px #FFF , 801px 323px #FFF , 202px 1659px #FFF , 1117px 549px #FFF , 290px 1859px #FFF ,;
-  z-index: 10;
 }
 
-.individual-stars {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: 1994px 1692px #fff, 961px 1928px #fff, 819px 1320px #fff,
-    1899px 52px #fff, 28px 1937px #fff, 157px 88px #fff, 860px 1909px #fff,
-    720px 427px #fff, 1319px 1469px #fff, 677px 960px #fff, 1265px 1181px #fff,
-    1176px 1361px #fff, 1957px 753px #fff, 1674px 1355px #fff, 929px 1206px #fff,
-    1038px 898px #fff, 1229px 365px #fff, 1085px 51px #fff, 851px 650px #fff,
-    385px 21px #fff, 41px 1153px #fff, 718px 70px #fff, 1321px 579px #fff,
-    497px 1458px #fff, 1981px 813px #fff, 776px 1187px #fff, 1345px 31px #fff,
-    1571px 400px #fff, 339px 587px #fff, 146px 750px #fff, 64px 61px #fff,
-    307px 981px #fff, 388px 849px #fff, 1398px 936px #fff, 522px 765px #fff,
-    1146px 350px #fff, 19px 206px #fff, 1767px 319px #fff, 1203px 425px #fff,
-    1917px 1018px #fff, 91px 1401px #fff, 898px 697px #fff, 1712px 1121px #fff,
-    633px 1119px #fff, 137px 1266px #fff, 1006px 931px #fff, 1644px 1804px #fff,
-    1596px 1057px #fff, 1298px 543px #fff, 1505px 996px #fff, 1972px 1383px #fff,
-    1210px 1497px #fff, 804px 1840px #fff, 913px 1047px #fff, 187px 1824px #fff,
-    1564px 1994px #fff, 557px 1737px #fff, 508px 1609px #fff, 1259px 1911px #fff,
-    1294px 1381px #fff, 1845px 1843px #fff, 667px 1497px #fff, 1046px 945px #fff,
-    937px 1889px #fff, 982px 1806px #fff, 1293px 671px #fff, 668px 904px #fff,
-    358px 1971px #fff, 133px 766px #fff, 1152px 1573px #fff, 318px 694px #fff,
-    578px 1184px #fff, 1620px 1701px #fff, 1359px 354px #fff, 1807px 1367px #fff,
-    458px 911px #fff, 1387px 806px #fff, 523px 81px #fff, 1243px 341px #fff,
-    906px 1730px #fff, 1629px 474px #fff, 1690px 419px #fff, 847px 808px #fff,
-    528px 1627px #fff, 480px 718px #fff, 537px 593px #fff, 1432px 1333px #fff,
-    200px 1228px #fff, 1800px 1375px #fff, 725px 1231px #fff, 1749px 1432px #fff,
-    1948px 303px #fff, 1889px 252px #fff, 1114px 1400px #fff, 759px 646px #fff,
-    222px 571px #fff, 1908px 1401px #fff, 1856px 1204px #fff, 338px 1645px #fff,
-    1528px 1050px #fff, 1228px 1250px #fff, 228px 350px #fff, 268px 350px #fff,
-    728px 250px #fff, 428px 550px #fff, 128px 950px #fff, 728px 320px #fff, 
-    658px 164px #fff, 393px 664px #fff, 1258px 540px #fff, 698px 950px #fff,
-    1228px 1111px #fff, 1091px 346px #fff, 991px 340px #fff, 228px 350px #fff,
-    1400px 650px #fff, 528px 1350px #fff, 828px 750px #fff, 828px 750px #fff, 
-    852px 780px #fff, 828px 790px #fff, 200px 200px #fff, 250px 250px #fff,
-    300px 300px #fff, 350px 350px #fff, 400px 400px #fff, 550px 200px #fff,
-    1240px 730px #fff, 1250px 930px #fff, 330px 1100px #fff, 1250px 433px #fff,
-    560px 200px #fff, 165px 800px #fff, 420px 525px #fff, 849px 129px #fff,
-    551px 200px #fff, 550px 200px #fff, 550px 200px #fff, 550px 200px #fff,
-    333px 331px #fff, 951px 1212px #fff, 1222px 1422px #fff, 1050px 1200px #fff,
-    152px 525px #fff, 125px 463px #fff, 644px 440px #fff, 365px 1200px #fff,
-    1259px 264px #fff, 1276px 1075px #fff, 1056px 456px #fff, 425px 1202px #fff,
-    950px 400px #fff, 653px 212px #fff, 770px 100px #fff, 1351px 544px #FFF,
-    708px 68px #FFF , 1870px 130px #FFF , 556px 1270px #FFF , 1432px 618px #FFF, 
-    769px 673px #FFF, 1289px 1410px #FFF, 1499px 1969px #FFF , 749px 1163px #FFF, 
-    1198px 198px #FFF, 399px 133px #FFF, 1856px 1280px #FFF, 904px 194px #FFF,
-    973px 1107px #FFF, 273px 507px #FFF, 173px 107px #FFF, 373px 1107px #FFF,
-    33px 437px #FFF, 253px 407px #FFF, 333px 407px #FFF, 403px 617px #FFF, 
-    103px 607px #FFF, 253px 907px #FFF, 773px 277px #FFF, 147px 247px #FFF, 
-    1253px 547px #FFF, 603px 1207px #FFF, 773px 907px #FFF, 853px 947px #FFF,
-    853px 807px #FFF, 853px 877px #FFF, 253px 407px #FFF, 873px 967px #FFF, 
-    253px 407px #FFF, 500px 500px #FFF, 540px 500px #FFF, 560px 500px #FFF, 
-    450px 450px #FFF, 560px 470px #FFF, 860px 490px #FFF, 860px 490px #FFF;
-  position: absolute;
-  border-radius: 5px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  will-change: transform;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}

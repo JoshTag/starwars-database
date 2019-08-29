@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../Styles/scss/_Master.scss";
 
-const Ship = (props) => {
+const Ship = props => {
   const [ship, setShip] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -17,6 +17,7 @@ const Ship = (props) => {
     <>
       {loading === true ? (
         <div className="individual-Container">
+          <div className="individual-stars" />
           <h3 className="individual-Container__header">{ship.name}</h3>
           <p>Model: {ship.model}</p>
           <p>Manufacturer: {ship.manufacturer}</p>

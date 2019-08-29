@@ -15,16 +15,12 @@ const CommentSection = ({ comments, props }) => {
 
     axios
       .post(`http://localhost:8080/people/${props.id}/comments`, inputs())
-      .then(res => {
-        console.log(res.data);
-      })
       .catch(err => {
-        console.log(err);
+        alert(err);
       });
 
-    e.target.reset();
     alert("Comment Submitted");
-    // window.location.reload();
+    window.location.reload();
   };
 
   const formatDate = (date) => {
@@ -34,6 +30,7 @@ const CommentSection = ({ comments, props }) => {
 
   return (
     <section className="character-Comments">
+      <div>
       <h3 className="character-Comments__header">Comments</h3>
       <form className="character-Comments__form" onSubmit={handleSubmit}>
         <div className="character-Comments__form">
@@ -46,6 +43,7 @@ const CommentSection = ({ comments, props }) => {
         </div>
         <button className="character-Comments__button" type="submit">Submit</button>
       </form>
+      </div>
       <div className="comment-container">
       {comments ? (
         comments.map((comment, index) => {

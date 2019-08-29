@@ -1,11 +1,11 @@
 @import "../Styles/scss/Master";
 
 .linkContainer {
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 30px auto 0;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -13,5 +13,17 @@
   &__link {
     text-decoration: none;
     color: $colour-yellow;
+  }
+}
+
+.pageContainer {
+  
+  &__nav-button {
+    display: flex;
+    justify-content: flex-end;
+
+    @include tablet {
+      justify-content: center;
+    }
   }
 }
