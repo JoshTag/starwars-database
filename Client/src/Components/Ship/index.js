@@ -18,7 +18,11 @@ const Ship = props => {
       {loading === true ? (
         <div className="individual-Container">
           <div className="individual-stars" />
-          <h3 className="individual-Container__header">{ship.name}</h3>
+          <h3 className="individual-Container__header">
+          {typeof ship.name === "string"
+              ? ship.name.toLowerCase()
+              : null}
+          </h3>
           <p>Model: {ship.model}</p>
           <p>Manufacturer: {ship.manufacturer}</p>
           <p>Length: {ship.length}</p>

@@ -1,36 +1,62 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { A } from "hookrouter"
-import { useSpring, animated } from 'react-spring'
-import img from "../../Assets/Images/Hacker.svg";
-
-const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-const trans1 = (x, y) => `translate3d(${x / 20}px,${y / 10}px,0)`
-const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`
-const trans3 = (x, y) => `translate3d(${x / 4 - 200}px,${y / 6 - 200}px,0)`
-const trans4 = (x, y) => `translate3d(${x / 3 - 100}px,${y / 7 - 10}px,0)`
+import "../../Styles/scss/_Master.scss";
 
 const Vehicles = () => {
-  const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 200, friction: 140 } }))
   const [vehicles, setVehicles] = useState([]);
+  const [constVehicles, setConstvehicles] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
+    getStarships();
+  }, []);
+
+  useEffect(() => {
     axios("http://localhost:8080/vehicles").then(res => {
+      setConstvehicles(res.data);
+    });
+  });
+
+  const searchCharacter = e => {
+    e.preventDefault();
+
+    getStarships();
+
+    let findVehicles = constVehicles.filter(
+      name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
+    );
+
+    axios.get(`http://localhost:8080/vehicles/`).then(() => {
+      setVehicles(findVehicles);
+    });
+
+    e.target.reset();
+  };
+
+  const getStarships = () => {
+    axios.get(`http://localhost:8080/vehicles/`).then(res => {
       setVehicles(res.data);
     });
-  }, []);
+  };
 
   return (
     <section className="section-Container">
-      <div className="parralax-container" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
-        <animated.img style={{ transform: props.xy.interpolate(trans3) }} className="img-one" src={img} />
-        <animated.img style={{ transform: props.xy.interpolate(trans2) }} className="img-one" src={img} />
-        <animated.img style={{ transform: props.xy.interpolate(trans4) }} className="img-one" src={img} />
-        <animated.div style={{ transform: props.xy.interpolate(trans1) }} className="character-stars" />
-        <animated.div style={{ transform: props.xy.interpolate(trans1) }} className="character-stars" />
+      <div className="star-container">
+        <div className="character-stars" />
+        <div className="character-stars" />
+        <div className="character-stars" />
       </div>
+      <form className="section-Container__search" onSubmit={searchCharacter}>
+        <textarea
+          className="section-Container__search__search-bar"
+          name="search"
+          placeholder="Search Character..."
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
       <h2 className="section-Container__header">vehicles</h2>
       {loading === true ? (
         <ul className="section-Container__list">

@@ -64,4 +64,30 @@
     margin-bottom: 10px;
     font-family: $site-font;
   }
+
+  &__comment {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__btn {
+    color: $colour-yellow;
+    border: solid 2px $colour-yellow;
+    background: black;
+    margin-top: 10px;
+    width: 100px;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    display: none;
+  }
+
+  &__btn:hover {
+    cursor: pointer;
+  }
+
+  :hover button {
+    display: inline;
+  }
 }

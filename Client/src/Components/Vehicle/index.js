@@ -17,7 +17,11 @@ const Ship = props => {
       {loading === true ? (
         <div className="individual-Container">
           <div className="individual-stars" />
-          <h3 className="individual-Container__header">{vehicle.name}</h3>
+          <h3 className="individual-Container__header">
+          {typeof vehicle.name === "string"
+              ? vehicle.name.toLowerCase()
+              : null}
+          </h3>
           <p>Model: {vehicle.model}</p>
           <p>Manufacturer: {vehicle.manufacturer}</p>
           <p>Length: {vehicle.length}</p>

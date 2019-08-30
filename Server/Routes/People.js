@@ -24,7 +24,7 @@ const getSingleperson = (req, res) => {
   res.json(findID);
 };
 
-const postComment = (req, res, next) => {
+const postComment = (req, res ) => {
   let date = new Date()
   let timestamp = date.getTime()
 
@@ -40,8 +40,17 @@ const postComment = (req, res, next) => {
   res.json(matchPeople);
 };
 
+const deleteComment = (req, res) => {
+
+  const matchPeople = people.find(person => person.id == req.params.id);
+  const removeComment = matchPeople.comments.filter(comment => comment.id !== req.params.commentid)
+  
+  res.json(removeComment)
+}
+
 router.get("/", getPeople);
 router.get("/:id", getSingleperson);
 router.post("/:id/comments", postComment);
+router.delete("/:id/comments/:commentid", deleteComment)
 
 module.exports = router;

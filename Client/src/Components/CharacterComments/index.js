@@ -25,7 +25,7 @@ const CommentSection = ({ comments, props }) => {
 
   const formatDate = (date) => {
     let newDate = new Date (date)
-    return ( newDate.getMonth() + 1 ) + "/" + newDate.getDate() + "/" + newDate.getFullYear()
+    return `${newDate.getMonth() + 1 }/${newDate.getDate()}/${newDate.getFullYear()}`
   }
 
   return (
@@ -48,10 +48,11 @@ const CommentSection = ({ comments, props }) => {
       {comments ? (
         comments.map((comment, index) => {
           return (
-            <div key={index}>
+            <div className="comment-container__comment" key={index}>
               <p>Name: {comment.name}</p>
               <p>Comment: {comment.comment}</p>
               <p>{formatDate(comment.timestamp)}</p>
+              <button className="comment-container__btn">Delete</button>
             </div>
           );
         })

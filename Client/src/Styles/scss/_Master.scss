@@ -69,6 +69,42 @@ body {
   position: relative;
   padding: 0 16px;
 
+  &__search {
+    z-index: 100;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+    
+    &__search-bar {
+      width: 100%;
+      resize: none;
+      display: flex;
+      height: 20px;
+
+      @include tablet {
+        width: 300px;
+      }
+    }
+    
+    > button {
+      color: $colour-yellow;
+      border: solid 2px $colour-yellow;
+      background: black;
+      width: 5rem;
+      font-size: 1rem;
+
+      @include tablet {
+        margin-left: 20px;
+      }
+    }
+
+    :nth-child(2) {
+      margin-right: 5px;
+    }
+  }
+
   &__header {
     @include site-header;
     
@@ -87,7 +123,7 @@ body {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
     }
 
     @include laptop {
@@ -145,6 +181,10 @@ body {
 
   > p {
     font-family: $site-font;
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 }
 
