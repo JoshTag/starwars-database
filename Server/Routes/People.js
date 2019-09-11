@@ -41,7 +41,6 @@ const postComment = (req, res ) => {
 };
 
 const deleteComment = (req, res) => {
-
   const matchPeople = people.find(person => person.id == req.params.id);
   const removeComment = matchPeople.comments.filter(comment => comment.id !== req.params.commentid)
   

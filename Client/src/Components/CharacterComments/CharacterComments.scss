@@ -55,7 +55,6 @@
   }
 }
 
-
 .comment-container {
   display: flex;
   flex-direction: column;
@@ -85,6 +84,9 @@
 
   &__btn:hover {
     cursor: pointer;
+    background: $colour-yellow;
+    color: #000;
+    transition: .3s;
   }
 
   :hover button {

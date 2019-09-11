@@ -33,7 +33,7 @@ const Characters = () => {
       setPeople(findCharacter);
     });
 
-    e.target.reset()
+    e.target.reset();
   };
 
   const getPeople = () => {

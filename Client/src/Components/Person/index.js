@@ -15,6 +15,9 @@ const Person = props => {
     });
   }, [props.id]);
 
+  // console.log();
+  
+
   return (
     <>
       {loading === true ? (
@@ -32,7 +35,7 @@ const Person = props => {
           <p>Skin Colour: {character.skin_color}</p>
           <p>Eye Colour: {character.eye_color}</p>
           <p>Birth Year: {character.birth_year}</p>
-          <CommentSection props={props} comments={character.comments} />
+          <CommentSection character={character} comments={character.comments} />
         </div>
       ) : (
         <div>LOADING...</div>

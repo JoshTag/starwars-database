@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
+import SubmittedComments from "../SubmittedComments"
 import "./CharacterComments.scss";
 
-const CommentSection = ({ comments, props }) => {
+const CommentSection = ({character, comments }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -14,7 +15,7 @@ const CommentSection = ({ comments, props }) => {
     };
 
     axios
-      .post(`http://localhost:8080/people/${props.id}/comments`, inputs())
+      .post(`http://localhost:8080/people/${character.id}/comments`, inputs())
       .catch(err => {
         alert(err);
       });
@@ -23,10 +24,8 @@ const CommentSection = ({ comments, props }) => {
     window.location.reload();
   };
 
-  const formatDate = (date) => {
-    let newDate = new Date (date)
-    return `${newDate.getMonth() + 1 }/${newDate.getDate()}/${newDate.getFullYear()}`
-  }
+  console.log(character);
+  
 
   return (
     <section className="character-Comments">
@@ -48,13 +47,15 @@ const CommentSection = ({ comments, props }) => {
       {comments ? (
         comments.map((comment, index) => {
           return (
-            <div className="comment-container__comment" key={index}>
-              <p>Name: {comment.name}</p>
-              <p>Comment: {comment.comment}</p>
-              <p>{formatDate(comment.timestamp)}</p>
-              <button className="comment-container__btn">Delete</button>
-            </div>
-          );
+          <SubmittedComments comment={comment} key={index} character={character} /> )
+          // return (
+          //   <div className="comment-container__comment" key={index}>
+          //     <p>Name: {comment.name}</p>
+          //     <p>Comment: {comment.comment}</p>
+          //     <p>{formatDate(comment.timestamp)}</p>
+          //     <button className="comment-container__btn"  onClick={handleDelete}>Delete</button>
+          //   </div>
+          // );
         })
       ) : (
         <div>LOADING...</div>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Death Star</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Death-Star">
+            <circle id="Oval" stroke="#000000" stroke-width="3" fill="#757575" cx="99.5" cy="99.5" r="92.5"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="3" fill="#757575" cx="99.5" cy="99.5" r="92.5"></circle>
+            <path d="M77.5,10.5 L64.5,34.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M81,36 L81,60" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M68,60 L68,79" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M68,81 L68,100" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M92,102 L92,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M84,102 L84,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M72,102 L71,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M36,102 L35,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M35,112 L38.5,131" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M50.25,132 L53.75,151" id="Line" stroke="#C8C8C8" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M63.25,155 L66.5,176.5" id="Line" stroke="#C8C8C8" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M114.125,156.25 L114.125,177.5" id="Line" stroke="#C8C8C8" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M35,112 L38.5,131" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M60.25,113 L60.25,130.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M77,113.25 L77,130.75" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M71,133.25 L71,150.75" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M83,132.25 L83,151" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M136,133.25 L136,150.75" id="Line" stroke="#C8C8C8" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M158,133.25 L156.5,151" id="Line" stroke="#C8C8C8" stroke-width="5" stroke-linecap="square"></path>
+            <path d="M92,113.25 L92,130.75" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M150,113.25 L150,130.75" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M170,113.25 L167,129.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M173,97.125 L170,113.375" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M173,97.125 L170,113.375" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M144,96.9375 L144,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M99,86.5 L99,100" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M153,87.75 L153,101.25" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M175,87.75 L175,101.25" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M167,60.75 L174,84.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M167,60.75 L174,84.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M102,62 L99,84.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M50.5,61.5 L45.5,84.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M96,9 L85.5,34.5" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M165.5,36 L33.875,36" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M181.5,60 L17.8125,60" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M188.484375,86 L9.828125,86" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M188.484375,112 L9.828125,112" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M174,153 L24.828125,153" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M145.5,179 L53.5859375,179" id="Line" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M184.5,131 L14,131" id="Line" stroke="#C8C8C8" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M189.5,99 L10,99" id="Line" stroke="#C8C8C8" stroke-width="9" stroke-linecap="square"></path>
+            <path d="M189.5,99 L10,99" id="Line" stroke="#000000" stroke-width="3" stroke-linecap="square"></path>
+            <circle id="Oval" stroke="#000000" stroke-width="3" cx="99.5" cy="99.5" r="92.5"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="2" fill="#D8D8D8" cx="131.5" cy="47.5" r="22.5"></circle>
+            <circle id="Oval" stroke="#000000" stroke-width="2" fill="#D8D8D8" cx="133" cy="47" r="9"></circle>
+            <circle id="Oval" stroke="#000000" fill="#D8D8D8" cx="133" cy="47" r="4"></circle>
+            <path d="M115.5,31.75 L125,42" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M131.5,25.5 L132.5,38" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M147.5,31.5 L139.5,40.5" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M153.5,51 L142.25,49.75" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M123.625,48.75 L110.375,48.75" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M127.5625,55.125 L120.4375,65.875" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+            <path d="M136.5625,55.125 L142,66.5" id="Line-2" stroke="#000000" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M98.5,83 C98.8333333,78.3333333 98.6666667,76 98,76 C97.3333333,76 94.3333333,70.1666667 89,58.5 L72.5,48 L148,35 L177.5,46 L191,76 L180,108.5 L98.5,110 L98.5,83 Z" id="Path-21" stroke="#000000" stroke-width="2" fill="#C4C4C4"></path>
+        <polygon id="Path-25" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="151.5 76 154.5 105 133 106"></polygon>
+        <ellipse id="Oval" stroke="#000000" stroke-width="3" fill="#C4C4C4" cx="118.5" cy="105" rx="27.5" ry="28"></ellipse>
+        <ellipse id="Oval" stroke="#000000" stroke-width="2" fill="#5B5B5B" cx="131" cy="103.5" rx="13" ry="13.5"></ellipse>
+        <ellipse id="Oval" stroke="#000000" fill="#000000" cx="133" cy="103.5" rx="4" ry="4.5"></ellipse>
+        <polygon id="Path-12" stroke="#000000" fill="#C4C4C4" points="109 132 102.5 138 101.5 132 104 129.5"></polygon>
+        <path d="M133,99 L133,93.5" id="Line" stroke="#000000" stroke-linecap="square"></path>
+        <path d="M129,101.75 L123.5,99.5" id="Line" stroke="#000000" stroke-linecap="square"></path>
+        <path d="M129.625,105.9375 L125.375,110.8125" id="Line" stroke="#000000" stroke-linecap="square"></path>
+        <path d="M134.90625,106.859375 L136.71875,111.578125" id="Line" stroke="#000000" stroke-linecap="square"></path>
+        <path d="M136.90625,101.859375 L140.5,99.5" id="Line" stroke="#000000" stroke-linecap="square"></path>
+        <path d="M122,77 C120.159519,82.7626029 117.826186,86.7626029 115,89 C112.173814,91.2373971 106.507147,93.5707305 98,96" id="Path" stroke="#000000" stroke-width="2"></path>
+        <path d="M102.5,83 C102.223309,84.5969814 102.056642,85.763648 102,86.5 C101.943358,87.236352 101.943358,88.5696853 102,90.5" id="Path-2" stroke="#000000"></path>
+        <path d="M103.5,82.5 C104,82.9545455 107,86.1363636 107.5,87.5" id="Path-3" stroke="#000000"></path>
+        <path d="M105,81.5 C105,81.5 106.266552,81.3392089 109,81.5 C109.801485,81.5471462 111.301485,81.7138128 113.5,82" id="Path-4" stroke="#000000"></path>
+        <path d="M92.5,97.5 C92.5,97.5 94.5,106 98.5,123" id="Path-5" stroke="#000000" stroke-width="2"></path>
+        <path d="M94.5,105 C97.7331107,105.879071 100.066444,106.545738 101.5,107 C104.373203,107.910454 104,111 106.5,113.5 C109,116 112.059987,114.381437 113,117.5 C113.413327,118.871244 113.579994,121.03791 113.5,124" id="Path-6" stroke="#000000" stroke-width="2"></path>
+        <polygon id="Path-7" stroke="#000000" stroke-width="2" fill="#C4C4C4" points="16 96 92.5 96 102 136 118.5 165.5 131 168 25 154.5 6 131"></polygon>
+        <polygon id="Path-8" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="19.5 102 12.5 125 62.5 129.5 62.5 102"></polygon>
+        <polygon id="Path-9" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="68.5 102 69.5 129.5 94.5 132 87.5 102"></polygon>
+        <polygon id="Path-10" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="14.5 134 26.5 150.5 72.5 156.5 62.5 137.5"></polygon>
+        <polygon id="Path-11" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="70.5 138 82.5 158.5 107.5 161.5 97 141"></polygon>
+        <path d="M143,92.5 C151.666667,79.5 156,73 156,73 C156,73 156.833333,70.1666667 158.5,64.5 L152,59.5 L130.5,78.5 C134.047593,81.2066377 136.547593,83.3733044 138,85 C139.452407,86.6266956 141.119073,89.1266956 143,92.5 Z" id="Path-13" stroke="#000000" stroke-width="2" fill="#C4C4C4"></path>
+        <path d="M151.5,59.5 C151.5,59.5 147.833333,60.1666667 140.5,61.5" id="Path-14" stroke="#000000" stroke-width="2"></path>
+        <polyline id="Path-15" stroke="#000000" stroke-width="2" points="124 75.5 137 63 140 55 151.5 52.5 159.5 59 163.5 67 162 77.5 157 78.5"></polyline>
+        <path d="M140,55 C140,55 140.5,55.8333333 141.5,57.5" id="Path-16" stroke="#000000" stroke-width="2"></path>
+        <path d="M152,53.5 L151.5,56" id="Path-17" stroke="#000000" stroke-width="2"></path>
+        <path d="M159.5,59.5 L157,60" id="Path-18" stroke="#000000" stroke-width="2"></path>
+        <path d="M163,68 L160.5,68.5" id="Path-19" stroke="#000000" stroke-width="2"></path>
+        <path d="M161.5,77.5 L159.5,75" id="Path-20" stroke="#000000" stroke-width="2"></path>
+        <polygon id="Path-22" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="91 58.5 136 52.5 120 43.5 76.5 50"></polygon>
+        <polygon id="Path-23" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="127.5 43.5 141.5 51 168.5 47 148 40"></polygon>
+        <polygon id="Path-24" stroke="#000000" stroke-width="2" fill="#5B5B5B" points="158.5 81.5 158.5 105 174.5 105 183.5 81"></polygon>
+        <path d="M98,76 L123.5,68.5" id="Path-26" stroke="#000000" stroke-width="2"></path>
+        <polyline id="Path-27" stroke="#000000" stroke-width="2" points="164.5 59.5 177 56 180 59.5 182 64 180 65.5 168.5 68"></polyline>
+    </g>
+</svg>
