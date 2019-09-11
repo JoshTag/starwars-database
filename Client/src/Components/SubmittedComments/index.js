@@ -18,7 +18,7 @@ const SubmittedComments = ({comment, character}) => {
         <p>Name: {comment.name}</p>
         <p>Comment: {comment.comment}</p>
         <p>{formatDate(comment.timestamp)}</p>
-        <button className="comment-container__btn"  onClick={handleDelete}>Delete</button>
+        <button className="comment-container__btn" onClick={handleDelete}>Delete</button>
       </div>
   )
 }

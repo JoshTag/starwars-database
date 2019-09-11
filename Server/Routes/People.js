@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
-const people = require("../Data/People.json");
+// const people = require("../Data/People.json");
+const people = require("../Models/People");
 const shortid = require("shortid");
 
 const getPeople = (req, res) => {
