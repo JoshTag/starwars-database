@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const people = require("../Data/People.json");
-const shortid = require('shortid');
+const shortid = require("shortid");
 
 const getPeople = (req, res) => {
   res.json(
@@ -24,9 +24,9 @@ const getSingleperson = (req, res) => {
   res.json(findID);
 };
 
-const postComment = (req, res ) => {
-  let date = new Date()
-  let timestamp = date.getTime()
+const postComment = (req, res) => {
+  let date = new Date();
+  let timestamp = date.getTime();
 
   const matchPeople = people.find(person => person.id == req.params.id);
   const { comment, name } = req.body;
@@ -41,15 +41,18 @@ const postComment = (req, res ) => {
 };
 
 const deleteComment = (req, res) => {
+  const deletedCommentId = req.body.id;
   const matchPeople = people.find(person => person.id == req.params.id);
-  const removeComment = matchPeople.comments.filter(comment => comment.id !== req.params.commentid)
-  
-  res.json(removeComment)
-}
+  const removeComment = matchPeople.comments.filter(
+    comment => comment.id !== deletedCommentId
+  );
+
+  res.json(removeComment);
+};
 
 router.get("/", getPeople);
 router.get("/:id", getSingleperson);
-router.post("/:id/comments", postComment);
-router.delete("/:id/comments/:commentid", deleteComment)
+router.post("/:id", postComment);
+router.delete("/:id", deleteComment);
 
 module.exports = router;

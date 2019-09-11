@@ -15,7 +15,7 @@ const CommentSection = ({character, comments }) => {
     };
 
     axios
-      .post(`http://localhost:8080/people/${character.id}/comments`, inputs())
+      .post(`http://localhost:8080/people/${character.id}`, inputs())
       .catch(err => {
         alert(err);
       });

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import axios from "axios";
 
 const SubmittedComments = ({comment, character}) => {
@@ -9,7 +9,7 @@ const SubmittedComments = ({comment, character}) => {
   }
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:8080/people/${character.id}/comments/${comment.id}`)
+    axios.delete(`http://localhost:8080/people/${character.id}`)
     console.log(character.id, comment.id);
   }
 

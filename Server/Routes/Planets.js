@@ -4,7 +4,7 @@ const planets = require("../Data/Planets.json");
 
 const getPlanets = (req, res) => {
   res.json(
-    planets.map(({ id, name, population, climate, gravity  }) => ({
+    planets.map(({ id, name, population, climate, gravity }) => ({
       id,
       name, 
       population, 
