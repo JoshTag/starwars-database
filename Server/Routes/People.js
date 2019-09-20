@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
-// const people = require("../Data/People.json");
-const people = require("../Models/People");
+const people = require("../Data/People.json");
+// const people = require("../Models/People");
 const shortid = require("shortid");
 
 const getPeople = (req, res) => {
@@ -53,7 +53,7 @@ const deleteComment = (req, res) => {
 
 router.get("/", getPeople);
 router.get("/:id", getSingleperson);
-router.post("/:id", postComment);
-router.delete("/:id", deleteComment);
+router.post("/:id/comments", postComment);
+router.delete("/:id/comments", deleteComment);
 
 module.exports = router;
