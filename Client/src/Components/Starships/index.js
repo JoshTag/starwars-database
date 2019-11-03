@@ -17,7 +17,7 @@ const Starships = () => {
     axios("http://localhost:8080/starships").then(res => {
       setConstStarships(res.data);
     });
-  });
+  }, []);
 
   const searchCharacter = e => {
     e.preventDefault();

@@ -15,7 +15,7 @@ const CommentSection = ({character, comments }) => {
     };
 
     axios
-      .post(`http://localhost:8080/people/${character.id}`, inputs())
+      .post(`http://localhost:8080/people/${character.id}/comments`, inputs())
       .catch(err => {
         alert(err);
       });
@@ -23,9 +23,6 @@ const CommentSection = ({character, comments }) => {
     alert("Comment Submitted");
     window.location.reload();
   };
-
-  console.log(character);
-  
 
   return (
     <section className="character-Comments">
@@ -45,17 +42,9 @@ const CommentSection = ({character, comments }) => {
       </div>
       <div className="comment-container">
       {comments ? (
-        comments.map((comment, index) => {
+        comments.reverse().map(comment => {
           return (
-          <SubmittedComments comment={comment} key={index} character={character} /> )
-          // return (
-          //   <div className="comment-container__comment" key={index}>
-          //     <p>Name: {comment.name}</p>
-          //     <p>Comment: {comment.comment}</p>
-          //     <p>{formatDate(comment.timestamp)}</p>
-          //     <button className="comment-container__btn"  onClick={handleDelete}>Delete</button>
-          //   </div>
-          // );
+          <SubmittedComments comment={comment} key={comment.id} character={character} /> )
         })
       ) : (
         <div>LOADING...</div>

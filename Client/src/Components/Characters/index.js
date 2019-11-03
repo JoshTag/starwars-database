@@ -18,7 +18,7 @@ const Characters = () => {
     axios("http://localhost:8080/people").then(res => {
       setConstPeople(res.data);
     });
-  });
+  }, []);
 
   const searchCharacter = e => {
     e.preventDefault();
@@ -61,9 +61,9 @@ const Characters = () => {
       </form>
       {loading === true ? (
         <ul className="section-Container__list">
-          {people.map((person, index) => {
+          {people.map(person => {
             return (
-              <li className="section-Container__list__item" key={index}>
+              <li className="section-Container__list__item" key={person.id}>
                 <A
                   className="section-Container__list__item--link"
                   href={`/characters/${person.id}`}

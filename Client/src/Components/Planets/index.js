@@ -17,7 +17,7 @@ const Planets = () => {
     axios("http://localhost:8080/planets").then(res => {
       setConstPlanets(res.data);
     });
-  });
+  }, []);
 
   const searchCharacter = e => {
     e.preventDefault();

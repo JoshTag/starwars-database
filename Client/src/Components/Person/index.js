@@ -15,9 +15,6 @@ const Person = props => {
     });
   }, [props.id]);
 
-  // console.log();
-  
-
   return (
     <>
       {loading === true ? (

@@ -17,7 +17,7 @@ const Vehicles = () => {
     axios("http://localhost:8080/vehicles").then(res => {
       setConstvehicles(res.data);
     });
-  });
+  }, []);
 
   const searchCharacter = e => {
     e.preventDefault();
