@@ -14,9 +14,13 @@ const Planets = () => {
   }, []);
 
   useEffect(() => {
-    axios("http://localhost:8080/planets").then(res => {
-      setConstPlanets(res.data);
-    });
+    axios("http://localhost:8080/planets")
+      .then(res => {
+        setConstPlanets(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   }, []);
 
   const searchCharacter = e => {
@@ -36,14 +40,19 @@ const Planets = () => {
   };
 
   const getStarships = () => {
-    axios.get(`http://localhost:8080/planets/`).then(res => {
-      setPlanets(res.data);
-    });
+    axios
+      .get(`http://localhost:8080/planets/`)
+      .then(res => {
+        setPlanets(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   };
 
   return (
     <div className="section-Container">
-     <div className="star-container">
+      <div className="star-container">
         <div className="character-stars" />
         <div className="character-stars" />
         <div className="character-stars" />
@@ -64,9 +73,13 @@ const Planets = () => {
             {planets.map((planet, index) => {
               return (
                 <li className="section-Container__list__item" key={index}>
-                <A className="section-Container__list__item--link" href={`/planets/${planet.id}`} key={index}>
-                  <p id="planet-list-item">{planet.name}</p>
-                </A>
+                  <A
+                    className="section-Container__list__item--link"
+                    href={`/planets/${planet.id}`}
+                    key={index}
+                  >
+                    <p id="planet-list-item">{planet.name}</p>
+                  </A>
                 </li>
               );
             })}

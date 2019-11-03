@@ -14,9 +14,13 @@ const Starships = () => {
   }, []);
 
   useEffect(() => {
-    axios("http://localhost:8080/starships").then(res => {
-      setConstStarships(res.data);
-    });
+    axios("http://localhost:8080/starships")
+      .then(res => {
+        setConstStarships(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   }, []);
 
   const searchCharacter = e => {
@@ -28,17 +32,25 @@ const Starships = () => {
       name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
     );
 
-    axios.get(`http://localhost:8080/starships/`).then(() => {
-      setStarships(findStarships);
-    });
+    axios.get(`http://localhost:8080/starships/`)
+      .then(() => {
+        setStarships(findStarships);
+      })
+      .catch(err => {
+        alert(err);
+      });
 
     e.target.reset();
   };
 
   const getStarships = () => {
-    axios.get(`http://localhost:8080/starships/`).then(res => {
-      setStarships(res.data);
-    });
+    axios.get(`http://localhost:8080/starships/`)
+      .then(res => {
+        setStarships(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   };
 
   return (

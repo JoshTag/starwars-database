@@ -15,9 +15,13 @@ const Characters = () => {
   }, []);
 
   useEffect(() => {
-    axios("http://localhost:8080/people").then(res => {
-      setConstPeople(res.data);
-    });
+    axios("http://localhost:8080/people")
+      .then(res => {
+        setConstPeople(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   }, []);
 
   const searchCharacter = e => {
@@ -37,9 +41,11 @@ const Characters = () => {
   };
 
   const getPeople = () => {
-    axios.get(`http://localhost:8080/people/`).then(res => {
-      setPeople(res.data);
-    });
+    axios
+      .get(`http://localhost:8080/people/`)
+      .then(res => {
+        setPeople(res.data);
+      });
   };
 
   return (

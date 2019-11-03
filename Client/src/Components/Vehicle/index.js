@@ -7,9 +7,13 @@ const Ship = props => {
 
   useEffect(() => {
     setLoading(true);
-    axios(`http://localhost:8080/vehicles/${props.id}`).then(res => {
-      setVehicle(res.data);
-    });
+    axios(`http://localhost:8080/vehicles/${props.id}`)
+      .then(res => {
+        setVehicle(res.data);
+      })
+      .catch(err => {
+        alert(err);
+      });
   }, [props.id]);
 
   return (

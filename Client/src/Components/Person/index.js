@@ -10,9 +10,13 @@ const Person = props => {
 
   useEffect(() => {
     setLoading(true);
-    axios(`http://localhost:8080/people/${props.id}`).then(res => {
-      setCharacter(res.data);
-    });
+    axios(`http://localhost:8080/people/${props.id}`)
+      .then(res => {
+        setCharacter(res.data);
+      })
+      .catch(err => {
+        alert(err)
+      });
   }, [props.id]);
 
   return (
