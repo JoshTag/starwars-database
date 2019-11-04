@@ -1,52 +1,41 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { A } from "hookrouter";
+import { Link } from "react-router-dom";
 import "../../Styles/scss/_Master.scss";
 import "./Character.scss";
 
 const Characters = () => {
   const [people, setPeople] = useState([]);
-  const [constPeople, setConstPeople] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    getPeople();
-  }, []);
-
-  useEffect(() => {
-    axios("http://localhost:8080/people")
+    axios
+      .get(`http://localhost:8080/people/`)
       .then(res => {
-        setConstPeople(res.data);
+        setPeople(res.data);
       })
       .catch(err => {
         alert(err);
       });
   }, []);
+  // const searchCharacter = e => {
+  //   e.preventDefault();
 
-  const searchCharacter = e => {
-    e.preventDefault();
+  //   axios
+  //     .get(`http://localhost:8080/people/`)
+  //     .then(res => {
+  //       setConstPeople(res.data);
+  //     });
 
-    getPeople();
+  //   let findCharacter = constPeople.filter(
+  //     name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
+  //   );
 
-    let findCharacter = constPeople.filter(
-      name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
-    );
+  //   // axios.get(`http://localhost:8080/people/`).then(() => {
+  //   //   setSearch(findCharacter);
+  //   // });
 
-    axios.get(`http://localhost:8080/people/`).then(() => {
-      setPeople(findCharacter);
-    });
-
-    e.target.reset();
-  };
-
-  const getPeople = () => {
-    axios
-      .get(`http://localhost:8080/people/`)
-      .then(res => {
-        setPeople(res.data);
-      });
-  };
+  //   e.target.reset();
+  // };
 
   return (
     <section className="section-Container">
@@ -56,7 +45,7 @@ const Characters = () => {
         <div className="character-stars" />
       </div>
       <h2 className="section-Container__header">Characters</h2>
-      <form className="section-Container__search" onSubmit={searchCharacter}>
+      <form className="section-Container__search">
         <textarea
           className="section-Container__search__search-bar"
           name="search"
@@ -65,26 +54,22 @@ const Characters = () => {
         />
         <button type="submit">Search</button>
       </form>
-      {loading === true ? (
-        <ul className="section-Container__list">
-          {people.map(person => {
-            return (
-              <li className="section-Container__list__item" key={person.id}>
-                <A
-                  className="section-Container__list__item--link"
-                  href={`/characters/${person.id}`}
-                >
-                  <p>{person.name.toLowerCase()}</p>
-                  <p>Birth Year: {person.birth_year}</p>
-                  <p>Gender: {person.gender}</p>
-                </A>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <h4>LOADING...</h4>
-      )}
+      <ul className="section-Container__list">
+        {people.map(person => {
+          return (
+            <li className="section-Container__list__item" key={person.id}>
+              <Link
+                className="section-Container__list__item--link"
+                to={`/characters/${person.id}`}
+              >
+                <p>{person.name.toLowerCase()}</p>
+                <p>Birth Year: {person.birth_year}</p>
+                <p>Gender: {person.gender}</p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };

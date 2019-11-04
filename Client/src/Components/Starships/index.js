@@ -1,57 +1,53 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { A } from "hookrouter";
+import { Link } from "react-router-dom";
 import "../../Styles/scss/_Master.scss";
 
 const Starships = () => {
   const [starships, setStarships] = useState([]);
-  const [constStarships, setConstStarships] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [constStarships, setConstStarships] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    getStarships();
-  }, []);
-
-  useEffect(() => {
-    axios("http://localhost:8080/starships")
-      .then(res => {
-        setConstStarships(res.data);
-      })
-      .catch(err => {
-        alert(err);
-      });
-  }, []);
-
-  const searchCharacter = e => {
-    e.preventDefault();
-
-    getStarships();
-
-    let findStarships = constStarships.filter(
-      name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
-    );
-
-    axios.get(`http://localhost:8080/starships/`)
-      .then(() => {
-        setStarships(findStarships);
-      })
-      .catch(err => {
-        alert(err);
-      });
-
-    e.target.reset();
-  };
-
-  const getStarships = () => {
-    axios.get(`http://localhost:8080/starships/`)
+    axios
+      .get(`http://localhost:8080/starships/`)
       .then(res => {
         setStarships(res.data);
       })
       .catch(err => {
         alert(err);
       });
-  };
+  }, []);
+
+  // const searchCharacter = e => {
+  //   e.preventDefault();
+
+  //   getStarships();
+
+  //   let findStarships = constStarships.filter(
+  //     name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
+  //   );
+
+  //   axios.get(`http://localhost:8080/starships/`)
+  //     .then(() => {
+  //       setStarships(findStarships);
+  //     })
+  //     .catch(err => {
+  //       alert(err);
+  //     });
+
+  //   e.target.reset();
+  // };
+
+  // const getStarships = () => {
+  //   axios.get(`http://localhost:8080/starships/`)
+  //     .then(res => {
+  //       setStarships(res.data);
+  //     })
+  //     .catch(err => {
+  //       alert(err);
+  //     });
+  // };
 
   return (
     <section className="section-Container">
@@ -61,7 +57,7 @@ const Starships = () => {
         <div className="character-stars" />
         <div className="character-stars" />
       </div>
-      <form className="section-Container__search" onSubmit={searchCharacter}>
+      <form className="section-Container__search">
         <textarea
           className="section-Container__search__search-bar"
           name="search"
@@ -70,26 +66,22 @@ const Starships = () => {
         />
         <button type="submit">Search</button>
       </form>
-      {loading === true ? (
-        <ul className="section-Container__list">
-          {starships.map((ship, index) => {
-            return (
-              <li className="section-Container__list__item" key={index}>
-                <A
-                  className="section-Container__list__item--link"
-                  href={`/starships/${ship.id}`}
-                >
-                  <p>{ship.name}</p>
-                  <p>Model: {ship.model}</p>
-                  <p>Class: {ship.starship_class}</p>
-                </A>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <p>LOADING...</p>
-      )}
+      <ul className="section-Container__list">
+        {starships.map(ship => {
+          return (
+            <li className="section-Container__list__item" key={ship.id}>
+              <Link
+                className="section-Container__list__item--link"
+                to={`/starships/${ship.id}`}
+              >
+                <p>{ship.name}</p>
+                <p>Model: {ship.model}</p>
+                <p>Class: {ship.starship_class}</p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };

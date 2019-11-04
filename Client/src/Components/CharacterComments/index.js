@@ -3,7 +3,7 @@ import axios from "axios";
 import SubmittedComments from "../SubmittedComments"
 import "./CharacterComments.scss";
 
-const CommentSection = ({character, comments }) => {
+const CommentSection = ({ character, comments }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -20,7 +20,6 @@ const CommentSection = ({character, comments }) => {
         alert(err);
       });
 
-    alert("Comment Submitted");
     window.location.reload();
   };
 

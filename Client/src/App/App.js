@@ -1,11 +1,23 @@
 import React from "react";
-import { useRoutes, A } from "hookrouter";
-import routes from "../router";
-import ErrorPage from "../Components/Error";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
+
+// Material Design menu imports
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import Drawer from '@material-ui/core/Drawer';
+import Drawer from "@material-ui/core/Drawer";
+
+// Component imports
+import Main from "../Components/Main";
+import Characters from "../Components/Characters";
+import Person from "../Components/Person";
+import Starships from "../Components/Starships";
+import Ship from "../Components/Ship";
+import Vehicles from "../Components/Vehicles";
+import Vehicle from "../Components/Vehicle";
+import Planets from "../Components/Planets";
+import Planet from "../Components/Planet";
+import ErrorPage from "../Components/Error";
 
 const useStyles = makeStyles({
   list: {
@@ -21,8 +33,6 @@ const useStyles = makeStyles({
 });
 
 function App() {
-  const routeResult = useRoutes(routes);
-
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -49,36 +59,51 @@ function App() {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <div className="linkContainer">
-        <A className="linkContainer__link" href="/">
+      <nav className="linkContainer">
+        <Link className="linkContainer__link" to="/">
           Main
-        </A>
-        <A className="linkContainer__link" href="/characters">
-          Characters 
-        </A>
-        <A className="linkContainer__link" href="/starships">
+        </Link>
+        <Link className="linkContainer__link" to="/characters">
+          Characters
+        </Link>
+        <Link className="linkContainer__link" to="/starships">
           Starships
-        </A>
-        <A className="linkContainer__link" href="/vehicles">
+        </Link>
+        <Link className="linkContainer__link" to="/vehicles">
           vehicles
-        </A>
-        <A className="linkContainer__link" href="/planets">
+        </Link>
+        <Link className="linkContainer__link" to="/planets">
           Planets
-        </A>
-      </div>
+        </Link>
+      </nav>
     </div>
   );
 
   return (
-    <div className="pageContainer">
+    <BrowserRouter className="pageContainer">
       <div className="pageContainer__nav-button">
-      <Button className={classes.root} onClick={toggleDrawer("left", true)}>menu</Button>
+        <Button className={classes.root} onClick={toggleDrawer("left", true)}>
+          menu
+        </Button>
       </div>
-      <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-        {sideList('left')}
+      <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
+        {sideList("left")}
       </Drawer>
-      {routeResult || <ErrorPage />}
-    </div>
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/characters" exact component={Characters} />
+        <Route path="/characters/:id" render={props => <Person {...props}/>} />
+        <Route path="/starships" exact component={Starships} />
+        <Route path="/starships/:id" render={props => <Ship {...props}/>} />
+        <Route path="/vehicles" exact component={Vehicles} />
+        <Route path="/vehicles/:id" render={props => <Vehicle {...props}/>} />
+        <Route path="/planets" exact component={Planets} />
+        <Route path="/planets/:id" render={props => <Planet {...props}/>} />
+        <Route path="" component={ErrorPage} />
+      </Switch>
+
+      {/* {routeResult || <ErrorPage />} */}
+    </BrowserRouter>
   );
 }
 
