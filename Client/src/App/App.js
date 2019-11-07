@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import axios from "axios";
 import "./App.scss";
 
 // Material Design menu imports
@@ -33,14 +34,39 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  // Axios to get data
+  let useGetData = (searchParam, setData, setConstData) => {
+    useEffect(() => {
+      axios
+        .get(`http://localhost:8080/${searchParam}/`)
+        .then(res => {
+          setData(res.data);
+          setConstData(res.data);
+        })
+        .catch(err => {
+          alert(err);
+        });
+    }, [searchParam, setData, setConstData]);
+  };
+
+  // Search functionality
+  const searchData = (event, constData, data, setData) => {
+    event.preventDefault();
+    let findItem = constData.filter(name =>
+      name.name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+
+    setData(findItem || data);
+  };
+
+  // Material Design set up
   const classes = useStyles();
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
     right: false
   });
-
   const toggleDrawer = (side, open) => event => {
     if (
       event.type === "keydown" &&
@@ -91,18 +117,32 @@ function App() {
       </Drawer>
       <Switch>
         <Route path="/" exact component={Main} />
-        <Route path="/characters" exact component={Characters} />
-        <Route path="/characters/:id" render={props => <Person {...props}/>} />
-        <Route path="/starships" exact component={Starships} />
-        <Route path="/starships/:id" render={props => <Ship {...props}/>} />
-        <Route path="/vehicles" exact component={Vehicles} />
-        <Route path="/vehicles/:id" render={props => <Vehicle {...props}/>} />
-        <Route path="/planets" exact component={Planets} />
-        <Route path="/planets/:id" render={props => <Planet {...props}/>} />
+        <Route
+          path="/characters"
+          exact
+          render={() => <Characters getData={useGetData} search={searchData} />}
+        />
+        <Route path="/characters/:id" render={props => <Person {...props} />} />
+        <Route
+          path="/starships"
+          exact
+          render={() => <Starships getData={useGetData} search={searchData} />}
+        />
+        <Route path="/starships/:id" render={props => <Ship {...props} />} />
+        <Route
+          path="/vehicles"
+          exact
+          render={() => <Vehicles getData={useGetData} search={searchData} />}
+        />
+        <Route path="/vehicles/:id" render={props => <Vehicle {...props} />} />
+        <Route
+          path="/planets"
+          exact
+          render={() => <Planets getData={useGetData} search={searchData} />}
+        />
+        <Route path="/planets/:id" render={props => <Planet {...props} />} />
         <Route path="" component={ErrorPage} />
       </Switch>
-
-      {/* {routeResult || <ErrorPage />} */}
     </BrowserRouter>
   );
 }

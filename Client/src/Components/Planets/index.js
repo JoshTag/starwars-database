@@ -1,49 +1,28 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../Styles/scss/_Master.scss";
 
-const Planets = () => {
+const Planets = props => {
   const [planets, setPlanets] = useState([]);
-  // const [constPlanets, setConstPlanets] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [constPlanets, setConstPlanets] = useState([]);
 
-  useEffect(() => {
-    axios("http://localhost:8080/planets")
-      .then(res => {
-        setPlanets(res.data);
-      })
-      .catch(err => {
-        alert(err);
-      });
-  }, []);
+  props.getData("planets", setPlanets, setConstPlanets);
 
-  // const searchCharacter = e => {
-  //   e.preventDefault();
-
-  //   getStarships();
-
-  //   let findPlanet = constPlanets.filter(
-  //     name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
-  //   );
-
-  //   axios.get(`http://localhost:8080/planets/`).then(() => {
-  //     setPlanets(findPlanet);
-  //   });
-
-  //   e.target.reset();
-  // };
-
-  // const getStarships = () => {
-  //   axios
-  //     .get(`http://localhost:8080/planets/`)
-  //     .then(res => {
-  //       setPlanets(res.data);
-  //     })
-  //     .catch(err => {
-  //       alert(err);
-  //     });
-  // };
+  const PlanetList = () => (
+    <ul className="section-Container__list">
+      {planets.map(planet => (
+          <li className="section-Container__list__item" key={planet.id}>
+            <Link
+              className="section-Container__list__item--link"
+              to={`/planets/${planet.id}`}
+              key={planet.id}
+            >
+              <p id="planet-list-item">{planet.name}</p>
+            </Link>
+          </li>
+      ))}
+    </ul>
+  )
 
   return (
     <div className="section-Container">
@@ -53,32 +32,23 @@ const Planets = () => {
         <div className="character-stars" />
       </div>
       <form className="section-Container__search">
-        <textarea
+        <input
           className="section-Container__search__search-bar"
           name="search"
           placeholder="Search Character..."
           required
+          onKeyUp={event => {
+            props.search(event, constPlanets, planets, setPlanets);
+          }}
         />
         <button type="submit">Search</button>
       </form>
       <h2 className="section-Container__header">Planets</h2>
-      <div>
-        <ul className="section-Container__list">
-          {planets.map((planet, index) => {
-            return (
-              <li className="section-Container__list__item" key={index}>
-                <Link
-                  className="section-Container__list__item--link"
-                  to={`/planets/${planet.id}`}
-                  key={index}
-                >
-                  <p id="planet-list-item">{planet.name}</p>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {planets.length > 0 ? (
+        <PlanetList />
+      ) : (
+        <p>There is no planet by that name</p>
+      )}
     </div>
   );
 };

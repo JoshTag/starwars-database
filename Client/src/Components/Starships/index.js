@@ -1,53 +1,29 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../Styles/scss/_Master.scss";
 
-const Starships = () => {
+const Starships = props => {
   const [starships, setStarships] = useState([]);
-  // const [constStarships, setConstStarships] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [constStarships, setConstStarships] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/starships/`)
-      .then(res => {
-        setStarships(res.data);
-      })
-      .catch(err => {
-        alert(err);
-      });
-  }, []);
+  props.getData("starships", setStarships, setConstStarships);
 
-  // const searchCharacter = e => {
-  //   e.preventDefault();
-
-  //   getStarships();
-
-  //   let findStarships = constStarships.filter(
-  //     name => name.name.toLowerCase() === e.target.search.value.toLowerCase()
-  //   );
-
-  //   axios.get(`http://localhost:8080/starships/`)
-  //     .then(() => {
-  //       setStarships(findStarships);
-  //     })
-  //     .catch(err => {
-  //       alert(err);
-  //     });
-
-  //   e.target.reset();
-  // };
-
-  // const getStarships = () => {
-  //   axios.get(`http://localhost:8080/starships/`)
-  //     .then(res => {
-  //       setStarships(res.data);
-  //     })
-  //     .catch(err => {
-  //       alert(err);
-  //     });
-  // };
+  const StarshipList = () => (
+    <ul className="section-Container__list">
+      {starships.map(ship => (
+        <li className="section-Container__list__item" key={ship.id}>
+          <Link
+            className="section-Container__list__item--link"
+            to={`/starships/${ship.id}`}
+          >
+            <p>{ship.name}</p>
+            <p>Model: {ship.model}</p>
+            <p>Class: {ship.starship_class}</p>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <section className="section-Container">
@@ -58,30 +34,22 @@ const Starships = () => {
         <div className="character-stars" />
       </div>
       <form className="section-Container__search">
-        <textarea
+        <input
           className="section-Container__search__search-bar"
           name="search"
-          placeholder="Search Character..."
+          placeholder="Search Starships..."
           required
+          onKeyUp={event => {
+            props.search(event, constStarships, starships, setStarships);
+          }}
         />
-        <button type="submit">Search</button>
       </form>
-      <ul className="section-Container__list">
-        {starships.map(ship => {
-          return (
-            <li className="section-Container__list__item" key={ship.id}>
-              <Link
-                className="section-Container__list__item--link"
-                to={`/starships/${ship.id}`}
-              >
-                <p>{ship.name}</p>
-                <p>Model: {ship.model}</p>
-                <p>Class: {ship.starship_class}</p>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+
+      {starships.length > 0 ? (
+        <StarshipList />
+      ) : (
+        <p>There is no starship by that name</p>
+      )}
     </section>
   );
 };

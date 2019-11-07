@@ -71,6 +71,7 @@ body {
 
   &__search {
     z-index: 100;
+    margin-bottom: 60px;
 
     @include tablet {
       display: flex;
@@ -86,22 +87,6 @@ body {
       @include tablet {
         width: 300px;
       }
-    }
-    
-    > button {
-      color: $colour-yellow;
-      border: solid 2px $colour-yellow;
-      background: black;
-      width: 5rem;
-      font-size: 1rem;
-
-      @include tablet {
-        margin-left: 20px;
-      }
-    }
-
-    :nth-child(2) {
-      margin-right: 5px;
     }
   }
 
