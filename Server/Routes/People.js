@@ -43,12 +43,17 @@ const postComment = (req, res) => {
 const deleteComment = (req, res) => {
   const deletedCommentId = req.params.commentid;
   const matchPeople = people.find(person => person.id == req.params.id);
+  
+  let i = matchPeople.comments.indexOf(matchPeople.comments.deletedCommentId)
+  matchPeople.comments.splice(deletedCommentId, 1)
+
   const removeComment = matchPeople.comments.filter(
     comment => comment.id !== deletedCommentId
   );
 
+
   res.json(removeComment);
-  console.log(req.params);
+  console.log(matchPeople, deletedCommentId, i);
   
 };
 
