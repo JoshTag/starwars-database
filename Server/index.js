@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 8080;
 
-// Routes
+// Routes imports
 const starships = require("./Routes/Starships");
 const vehicles = require("./Routes/Vehicles");
 const people = require("./Routes/People");
@@ -24,6 +24,9 @@ app.use(express.json());
 
 // db.on("error", error => console.error(error));
 // db.once("open", () => console.log("mongoDB Connected!! ¯\\_(ツ)_/¯ "));
+
+// app.use(express.json())
+
 
 // cors configuration 
 const corsConfig = {

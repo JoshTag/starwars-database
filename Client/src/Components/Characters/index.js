@@ -10,20 +10,20 @@ const Characters = props => {
   props.getData("people", setPeople, setConstPeople);
 
   const CharacterList = () => (
-      <ul className="section-Container__list">
-        {people.map(person => (
-          <li className="section-Container__list__item" key={person.id}>
-            <Link
-              className="section-Container__list__item--link"
-              to={`/characters/${person.id}`}
-            >
-              <p>{person.name.toLowerCase()}</p>
-              <p>Birth Year: {person.birth_year}</p>
-              <p>Gender: {person.gender}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <ul className="section-Container__list">
+      {people.map(person => (
+        <li className="section-Container__list__item" key={person.id}>
+          <Link
+            className="section-Container__list__item--link"
+            to={`/characters/${person.id}`}
+          >
+            <p>{person.name.toLowerCase()}</p>
+            <p>Birth Year: {person.birth_year}</p>
+            <p>Gender: {person.gender}</p>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 
   return (

@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 
 function App() {
   // Axios to get data
-  let useGetData = (searchParam, setData, setConstData) => {
+  const useGetData = (searchParam, setData, setConstData) => {
     useEffect(() => {
       axios
         .get(`http://localhost:8080/${searchParam}/`)
@@ -59,7 +59,7 @@ function App() {
     setData(findItem || data);
   };
 
-  // Material Design set up
+  // Material Design set
   const classes = useStyles();
   const [state, setState] = useState({
     top: false,
