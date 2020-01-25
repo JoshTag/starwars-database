@@ -15,12 +15,14 @@ const CommentSection = ({ character, comments }) => {
     };
 
     axios
-      .post(`http://localhost:8080/people/${character.id}/comments`, inputs())
+      .post(`http://localhost:8080/people/${character.character_id}/comments`, inputs())
       .catch(err => {
         alert(err);
       });
 
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
   };
 
   return (
@@ -58,7 +60,7 @@ const CommentSection = ({ character, comments }) => {
             .map(comment => (
               <SubmittedComments
                 comment={comment}
-                key={comment.id}
+                key={comment.comment_id}
                 character={character}
               />
             ))

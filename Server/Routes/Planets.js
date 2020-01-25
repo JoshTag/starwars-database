@@ -4,8 +4,8 @@ const planets = require("../Data/Planets.json");
 
 const getPlanets = (req, res) => {
   res.json(
-    planets.map(({ id, name, population, climate, gravity }) => ({
-      id,
+    planets.map(({ planet_id, name, population, climate, gravity }) => ({
+      planet_id,
       name, 
       population, 
       climate, 
@@ -15,7 +15,7 @@ const getPlanets = (req, res) => {
 };
 
 const getSinglePlanet = (req, res) => {
-  const findID = planets.find(planet => planet.id == req.params.id);
+  const findID = planets.find(planet => planet.planet_id == req.params.planet_id);
 
   if (!findID) {
     res.status(404).json({ error: "No Planet Found With That ID" });
@@ -25,7 +25,7 @@ const getSinglePlanet = (req, res) => {
 };
 
 router.get("/", getPlanets);
-router.get("/:id", getSinglePlanet);
+router.get("/:planet_id", getSinglePlanet);
 
 
 module.exports = router;

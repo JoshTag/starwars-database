@@ -12,10 +12,10 @@ const Vehicles = props => {
     <ul className="section-Container__list">
       {vehicles.map(vehicle => {
         return (
-          <li className="section-Container__list__item" key={vehicle.id}>
+          <li className="section-Container__list__item" key={vehicle.vehicle_id}>
             <Link
               className="section-Container__list__item--link"
-              to={`/vehicles/${vehicle.id}`}
+              to={`/vehicles/${vehicle.vehicle_id}`}
             >
               <p>{vehicle.name}</p>
               <p>Model: {vehicle.model}</p>
@@ -46,11 +46,10 @@ const Vehicles = props => {
         />
       </form>
       <h2 className="section-Container__header">vehicles</h2>
-      {vehicles.length > 0 ? (
-        <VehicleList />
-      ) : (
-        <p>There is no vehicle by that name</p>
-      )}
+      {vehicles.length > 0 
+        ? ( <VehicleList /> ) 
+        : ( <p>There is no vehicle by that name</p>)
+      }
     </section>
   );
 };

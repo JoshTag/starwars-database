@@ -11,10 +11,10 @@ const Starships = props => {
   const StarshipList = () => (
     <ul className="section-Container__list">
       {starships.map(ship => (
-        <li className="section-Container__list__item" key={ship.id}>
+        <li className="section-Container__list__item" key={ship.starship_id}>
           <Link
             className="section-Container__list__item--link"
-            to={`/starships/${ship.id}`}
+            to={`/starships/${ship.starship_id}`}
           >
             <p>{ship.name}</p>
             <p>Model: {ship.model}</p>
@@ -45,11 +45,10 @@ const Starships = props => {
         />
       </form>
 
-      {starships.length > 0 ? (
-        <StarshipList />
-      ) : (
-        <p>There is no starship by that name</p>
-      )}
+      {starships.length > 0 
+        ? ( <StarshipList /> ) 
+        : ( <p>There is no starship by that name</p> )
+      }
     </section>
   );
 };

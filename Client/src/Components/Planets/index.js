@@ -11,11 +11,10 @@ const Planets = props => {
   const PlanetList = () => (
     <ul className="section-Container__list">
       {planets.map(planet => (
-          <li className="section-Container__list__item" key={planet.id}>
+          <li className="section-Container__list__item" key={planet.planet_id}>
             <Link
               className="section-Container__list__item--link"
-              to={`/planets/${planet.id}`}
-              key={planet.id}
+              to={`/planets/${planet.planet_id}`}
             >
               <p id="planet-list-item">{planet.name}</p>
             </Link>
@@ -31,6 +30,7 @@ const Planets = props => {
         <div className="character-stars" />
         <div className="character-stars" />
       </div>
+      <h2 className="section-Container__header">Planets</h2>
       <form className="section-Container__search">
         <input
           className="section-Container__search__search-bar"
@@ -43,12 +43,10 @@ const Planets = props => {
         />
         <button type="submit">Search</button>
       </form>
-      <h2 className="section-Container__header">Planets</h2>
-      {planets.length > 0 ? (
-        <PlanetList />
-      ) : (
-        <p>There is no planet by that name</p>
-      )}
+      {planets.length > 0 
+        ? ( <PlanetList />) 
+        : ( <p>There is no planet by that name</p>)
+      }
     </div>
   );
 };

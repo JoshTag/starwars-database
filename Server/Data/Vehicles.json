@@ -1,6 +1,6 @@
 [
   {
-    "id": 4,
+    "vehicle_id": 4,
     "name": "Sand Crawler",
     "model": "Digger Crawler",
     "vehicle_class": "wheeled",
@@ -14,7 +14,7 @@
     "consumables": "2 months"
   },
   {
-    "id": 6,
+    "vehicle_id": 6,
     "name": "T-16 skyhopper",
     "model": "T-16 skyhopper",
     "vehicle_class": "repulsorcraft",
@@ -28,7 +28,7 @@
     "consumables": "0"
   },
   {
-    "id": 7,
+    "vehicle_id": 7,
     "name": "X-34 landspeeder",
     "model": "X-34 landspeeder",
     "vehicle_class": "repulsorcraft",
@@ -42,7 +42,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 8,
+    "vehicle_id": 8,
     "name": "TIE/LN starfighter",
     "model": "Twin Ion Engine/Ln Starfighter",
     "vehicle_class": "starfighter",
@@ -56,7 +56,7 @@
     "consumables": "2 days"
   },
   {
-    "id": 14,
+    "vehicle_id": 14,
     "name": "Snowspeeder",
     "model": "t-47 airspeeder",
     "vehicle_class": "airspeeder",
@@ -70,7 +70,7 @@
     "consumables": "none"
   },
   {
-    "id": 16,
+    "vehicle_id": 16,
     "name": "TIE bomber",
     "model": "TIE/sa bomber",
     "vehicle_class": "space/planetary bomber",
@@ -84,7 +84,7 @@
     "consumables": "2 days"
   },
   {
-    "id": 18,
+    "vehicle_id": 18,
     "name": "AT-AT",
     "model": "All Terrain Armored Transport",
     "vehicle_class": "assault walker",
@@ -98,7 +98,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 19,
+    "vehicle_id": 19,
     "name": "AT-ST",
     "model": "All Terrain Scout Transport",
     "vehicle_class": "walker",
@@ -112,7 +112,7 @@
     "consumables": "none"
   },
   {
-    "id": 20,
+    "vehicle_id": 20,
     "name": "Storm IV Twin-Pod cloud car",
     "model": "Storm IV Twin-Pod",
     "vehicle_class": "repulsorcraft",
@@ -126,7 +126,7 @@
     "consumables": "1 day"
   },
   {
-    "id": 24,
+    "vehicle_id": 24,
     "name": "Sail barge",
     "model": "Modified Luxury Sail Barge",
     "vehicle_class": "sail barge",
@@ -140,7 +140,7 @@
     "consumables": "Live food tanks"
   },
   {
-    "id": 25,
+    "vehicle_id": 25,
     "name": "Bantha-II cargo skiff",
     "model": "Bantha-II",
     "vehicle_class": "repulsorcraft cargo skiff",
@@ -154,7 +154,7 @@
     "consumables": "1 day"
   },
   {
-    "id": 26,
+    "vehicle_id": 26,
     "name": "TIE/IN interceptor",
     "model": "Twin Ion Engine Interceptor",
     "vehicle_class": "starfighter",
@@ -168,7 +168,7 @@
     "consumables": "2 days"
   },
   {
-    "id": 30,
+    "vehicle_id": 30,
     "name": "Imperial Speeder Bike",
     "model": "74-Z speeder bike",
     "vehicle_class": "speeder",
@@ -182,11 +182,11 @@
     "consumables": "1 day"
   },
   {
-    "id": 33,
-    "name": "Vulture Droid",
-    "model": "Vulture-class droid starfighter",
+    "vehicle_id": 33,
+    "name": "Vulture Drovehicle_id",
+    "model": "Vulture-class drovehicle_id starfighter",
     "vehicle_class": "starfighter",
-    "manufacturer": "Haor Chall Engineering, Baktoid Armor Workshop",
+    "manufacturer": "Haor Chall Engineering, Baktovehicle_id Armor Workshop",
     "cost_in_credits": "unknown",
     "length": "3.5",
     "max_atmosphering_speed": "1200",
@@ -196,11 +196,11 @@
     "consumables": "none"
   },
   {
-    "id": 34,
+    "vehicle_id": 34,
     "name": "Multi-Troop Transport",
     "model": "Multi-Troop Transport",
     "vehicle_class": "repulsorcraft",
-    "manufacturer": "Baktoid Armor Workshop",
+    "manufacturer": "Baktovehicle_id Armor Workshop",
     "cost_in_credits": "138000",
     "length": "31",
     "max_atmosphering_speed": "35",
@@ -210,11 +210,11 @@
     "consumables": "unknown"
   },
   {
-    "id": 35,
+    "vehicle_id": 35,
     "name": "Armored Assault Tank",
     "model": "Armoured Assault Tank",
     "vehicle_class": "repulsorcraft",
-    "manufacturer": "Baktoid Armor Workshop",
+    "manufacturer": "Baktovehicle_id Armor Workshop",
     "cost_in_credits": "unknown",
     "length": "9.75",
     "max_atmosphering_speed": "55",
@@ -224,11 +224,11 @@
     "consumables": "unknown"
   },
   {
-    "id": 36,
+    "vehicle_id": 36,
     "name": "Single Trooper Aerial Platform",
     "model": "Single Trooper Aerial Platform",
     "vehicle_class": "repulsorcraft",
-    "manufacturer": "Baktoid Armor Workshop",
+    "manufacturer": "Baktovehicle_id Armor Workshop",
     "cost_in_credits": "2500",
     "length": "2",
     "max_atmosphering_speed": "400",
@@ -238,7 +238,7 @@
     "consumables": "none"
   },
   {
-    "id": 37,
+    "vehicle_id": 37,
     "name": "C-9979 landing craft",
     "model": "C-9979 landing craft",
     "vehicle_class": "landing craft",
@@ -252,7 +252,7 @@
     "consumables": "1 day"
   },
   {
-    "id": 38,
+    "vehicle_id": 38,
     "name": "Tribubble bongo",
     "model": "Tribubble bongo",
     "vehicle_class": "submarine",
@@ -266,7 +266,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 42,
+    "vehicle_id": 42,
     "name": "Sith speeder",
     "model": "FC-20 speeder bike",
     "vehicle_class": "speeder",
@@ -280,7 +280,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 44,
+    "vehicle_id": 44,
     "name": "Zephyr-G swoop bike",
     "model": "Zephyr-G swoop bike",
     "vehicle_class": "repulsorcraft",
@@ -294,7 +294,7 @@
     "consumables": "none"
   },
   {
-    "id": 45,
+    "vehicle_id": 45,
     "name": "Koro-2 Exodrive airspeeder",
     "model": "Koro-2 Exodrive airspeeder",
     "vehicle_class": "airspeeder",
@@ -308,7 +308,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 46,
+    "vehicle_id": 46,
     "name": "XJ-6 airspeeder",
     "model": "XJ-6 airspeeder",
     "vehicle_class": "airspeeder",
@@ -322,7 +322,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 50,
+    "vehicle_id": 50,
     "name": "LAAT/i",
     "model": "Low Altitude Assault Transport/infrantry",
     "vehicle_class": "gunship",
@@ -336,7 +336,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 51,
+    "vehicle_id": 51,
     "name": "LAAT/c",
     "model": "Low Altitude Assault Transport/carrier",
     "vehicle_class": "gunship",
@@ -350,7 +350,7 @@
     "consumables": "unknown"
   },
   {
-    "id": 60,
+    "vehicle_id": 60,
     "name": "Tsmeu-6 personal wheel bike",
     "model": "Tsmeu-6 personal wheel bike",
     "vehicle_class": "wheeled walker",
@@ -364,7 +364,7 @@
     "consumables": "none"
   },
   {
-    "id": 62,
+    "vehicle_id": 62,
     "name": "Emergency Firespeeder",
     "model": "Fire suppression speeder",
     "vehicle_class": "fire suppression ship",
@@ -378,10 +378,10 @@
     "consumables": "unknown"
   },
   {
-    "id": 67,
-    "name": "Droid tri-fighter",
+    "vehicle_id": 67,
+    "name": "Drovehicle_id tri-fighter",
     "model": "tri-fighter",
-    "vehicle_class": "droid starfighter",
+    "vehicle_class": "drovehicle_id starfighter",
     "manufacturer": "Colla Designs, Phlac-Arphocc Automata Industries",
     "cost_in_credits": "20000",
     "length": "5.4",
@@ -392,7 +392,7 @@
     "consumables": "none"
   },
   {
-    "id": 69,
+    "vehicle_id": 69,
     "name": "Oevvaor jet catamaran",
     "model": "Oevvaor jet catamaran",
     "vehicle_class": "airspeeder",
@@ -406,7 +406,7 @@
     "consumables": "3 days"
   },
   {
-    "id": 70,
+    "vehicle_id": 70,
     "name": "Raddaugh Gnasp fluttercraft",
     "model": "Raddaugh Gnasp fluttercraft",
     "vehicle_class": "air speeder",
@@ -420,7 +420,7 @@
     "consumables": "none"
   },
   {
-    "id": 71,
+    "vehicle_id": 71,
     "name": "Clone turbo tank",
     "model": "HAVw A6 Juggernaut",
     "vehicle_class": "wheeled walker",
@@ -434,10 +434,10 @@
     "consumables": "20 days"
   },
   {
-    "id": 72,
-    "name": "Corporate Alliance tank droid",
-    "model": "NR-N99 Persuader-class droid enforcer",
-    "vehicle_class": "droid tank",
+    "vehicle_id": 72,
+    "name": "Corporate Alliance tank drovehicle_id",
+    "model": "NR-N99 Persuader-class drovehicle_id enforcer",
+    "vehicle_class": "drovehicle_id tank",
     "manufacturer": "Techno Union",
     "cost_in_credits": "49000",
     "length": "10.96",
@@ -448,11 +448,11 @@
     "consumables": "none"
   },
   {
-    "id": 73,
-    "name": "Droid gunship",
-    "model": "HMP droid gunship",
+    "vehicle_id": 73,
+    "name": "Drovehicle_id gunship",
+    "model": "HMP drovehicle_id gunship",
     "vehicle_class": "airspeeder",
-    "manufacturer": "Baktoid Fleet Ordnance, Haor Chall Engineering",
+    "manufacturer": "Baktovehicle_id Fleet Ordnance, Haor Chall Engineering",
     "cost_in_credits": "60000",
     "length": "12.3",
     "max_atmosphering_speed": "820",
@@ -462,7 +462,7 @@
     "consumables": "none"
   },
   {
-    "id": 76,
+    "vehicle_id": 76,
     "name": "AT-RT",
     "model": "All Terrain Recon Transport",
     "vehicle_class": "walker",
@@ -476,7 +476,7 @@
     "consumables": "1 day"
   },
   {
-    "id": 53,
+    "vehicle_id": 53,
     "name": "AT-TE",
     "model": "All Terrain Tactical Enforcer",
     "vehicle_class": "walker",
@@ -490,7 +490,7 @@
     "consumables": "21 days"
   },
   {
-    "id": 54,
+    "vehicle_id": 54,
     "name": "SPHA",
     "model": "Self-Propelled Heavy Artillery",
     "vehicle_class": "walker",
@@ -504,7 +504,7 @@
     "consumables": "7 days"
   },
   {
-    "id": 55,
+    "vehicle_id": 55,
     "name": "Flitknot speeder",
     "model": "Flitknot speeder",
     "vehicle_class": "speeder",
@@ -518,8 +518,8 @@
     "consumables": "unknown"
   },
   {
-    "id": 56,
-    "name": "Neimoidian shuttle",
+    "vehicle_id": 56,
+    "name": "Neimovehicle_idian shuttle",
     "model": "Sheathipede-class transport shuttle",
     "vehicle_class": "transport",
     "manufacturer": "Haor Chall Engineering",
@@ -532,7 +532,7 @@
     "consumables": "7 days"
   },
   {
-    "id": 57,
+    "vehicle_id": 57,
     "name": "Geonosian starfighter",
     "model": "Nantex-class territorial defense",
     "vehicle_class": "starfighter",

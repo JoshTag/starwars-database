@@ -5,16 +5,28 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 8080;
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// cors configuration
+const corsConfig = {
+  origin: ["http://localhost:3000"]
+};
+app.use(cors(corsConfig));
+
 // Routes imports
 const starships = require("./Routes/Starships");
 const vehicles = require("./Routes/Vehicles");
 const people = require("./Routes/People");
 const planets = require("./Routes/Planets");
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// routes
+app.use("/starships", starships);
+app.use("/vehicles", vehicles);
+app.use("/people", people);
+app.use("/planets", planets);
 
-// Connects back-end with the mongoDB
+// // Connects back-end with the mongoDB
 // mongoose.connect(process.env.DATABASE_URL, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
@@ -23,22 +35,7 @@ app.use(express.json());
 // const db = mongoose.connection;
 
 // db.on("error", error => console.error(error));
-// db.once("open", () => console.log("mongoDB Connected!! ¯\\_(ツ)_/¯ "));
+// db.once("open", () => console.log("mongoDB Connected..."));
 
-// app.use(express.json())
-
-
-// cors configuration 
-const corsConfig = {
-  origin: ["http://localhost:3000"]
-};
-app.use(cors(corsConfig));
-
-
-// routes
-app.use("/starships", starships);
-app.use("/vehicles", vehicles);
-app.use("/people", people);
-app.use("/planets", planets);
 
 app.listen(port, () => console.log(`We chillin on port ${port}`));

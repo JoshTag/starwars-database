@@ -4,8 +4,8 @@ const vehicles = require("../Data/Vehicles.json");
 
 const getVechiles = (req, res) => {
   res.json(
-    vehicles.map(({ id, name, model, vehicle_class }) => ({
-      id,
+    vehicles.map(({ vehicle_id, name, model, vehicle_class }) => ({
+      vehicle_id,
       name,
       model,
       vehicle_class
@@ -14,7 +14,7 @@ const getVechiles = (req, res) => {
 };
 
 const getSingleVechile = (req, res) => {
-  const findID = vehicles.find(vehicle => vehicle.id == req.params.id);
+  const findID = vehicles.find(vehicle => vehicle.vehicle_id == req.params.vehicle_id);
 
   if (!findID) {
     res.status(404).json({ error: "No Vehicle Found With That ID" });
@@ -24,6 +24,6 @@ const getSingleVechile = (req, res) => {
 };
 
 router.get("/", getVechiles);
-router.get("/:id", getSingleVechile);
+router.get("/:vehicle_id", getSingleVechile);
 
 module.exports = router;

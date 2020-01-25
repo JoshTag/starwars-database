@@ -10,12 +10,15 @@ const SubmittedComments = ({ comment, character }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `http://localhost:8080/people/${character.id}/comments/${comment.id}`
+        `http://localhost:8080/people/${character.character_id}/comments/${comment.comment_id}`
       )
       .catch(err => {
         alert(err);
       });
-    console.log(character.id, comment.id);
+      
+      setTimeout(() => {
+        window.location.reload();
+      }, 300);
   };
 
   return (

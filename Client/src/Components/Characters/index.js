@@ -12,10 +12,10 @@ const Characters = props => {
   const CharacterList = () => (
     <ul className="section-Container__list">
       {people.map(person => (
-        <li className="section-Container__list__item" key={person.id}>
+        <li className="section-Container__list__item" key={person.character_id}>
           <Link
             className="section-Container__list__item--link"
-            to={`/characters/${person.id}`}
+            to={`/characters/${person.character_id}`}
           >
             <p>{person.name.toLowerCase()}</p>
             <p>Birth Year: {person.birth_year}</p>
@@ -45,11 +45,10 @@ const Characters = props => {
           }}
         />
       </form>
-      {people.length > 0 ? (
-        <CharacterList />
-      ) : (
-        <p>There is no character by that name</p>
-      )}
+      {people.length > 0 
+        ? ( <CharacterList /> )
+        : ( <p className="search-none">There is no character by that name</p> )
+      }
     </section>
   );
 };
