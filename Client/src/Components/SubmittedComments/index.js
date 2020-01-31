@@ -15,11 +15,11 @@ const SubmittedComments = ({ comment, character }) => {
       .catch(err => {
         alert(err);
       });
-      
-      setTimeout(() => {
-        window.location.reload();
-      }, 300);
+
+    window.location.reload();
   };
+
+  console.log(comment);
 
   return (
     <div className="comment-container__comment">

@@ -1,12 +1,25 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Firebase setup
+const firebase = require("firebase/app");
+const admin = require('firebase-admin');
+const serviceAccount = require("./serviceAccountKey.json");
+
+require("firebase/auth");
+require("firebase/firestore");
+require("firebase/database");
+
+firebase.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://starwars-database-81ddb.firebaseio.com'
+});
 
 // cors configuration
 const corsConfig = {
@@ -26,16 +39,4 @@ app.use("/vehicles", vehicles);
 app.use("/people", people);
 app.use("/planets", planets);
 
-// // Connects back-end with the mongoDB
-// mongoose.connect(process.env.DATABASE_URL, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-
-// const db = mongoose.connection;
-
-// db.on("error", error => console.error(error));
-// db.once("open", () => console.log("mongoDB Connected..."));
-
-
-app.listen(port, () => console.log(`We chillin on port ${port}`));
+app.listen(port, () => console.log(`We chillin on port ${port} --------------------------------------------`));

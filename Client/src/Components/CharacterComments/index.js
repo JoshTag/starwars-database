@@ -20,9 +20,7 @@ const CommentSection = ({ character, comments }) => {
         alert(err);
       });
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 300);
+    window.location.reload();
   };
 
   return (
@@ -55,7 +53,7 @@ const CommentSection = ({ character, comments }) => {
       </div>
       <div className="comment-container">
         {comments ? (
-          comments
+          Object.values(comments)
             .reverse()
             .map(comment => (
               <SubmittedComments
@@ -65,7 +63,7 @@ const CommentSection = ({ character, comments }) => {
               />
             ))
         ) : (
-          <div>LOADING...</div>
+          <p>There are currently no comments</p>
         )}
       </div>
     </section>
