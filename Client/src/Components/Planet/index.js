@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const Planet = props => {
   const [planet, setPlanet] = useState({});
 
   useEffect(() => {
     // setLoading(true);
-    axios(`http://localhost:8080/planets/${props.match.params.id}`).then(res => {
+    axios(`${pingURL}/planets/${props.match.params.id}`).then(res => {
       setPlanet(res.data);
     });
   }, [props.match.params.id]);

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../Styles/scss/_Master.scss";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const Ship = props => {
   const [ship, setShip] = useState({});
 
   useEffect(() => {
-    axios(`http://localhost:8080/starships/${props.match.params.id}`).then(
+    axios(`${pingURL}/starships/${props.match.params.id}`).then(
       res => {
         setShip(res.data);
       }

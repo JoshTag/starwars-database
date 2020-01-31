@@ -83,13 +83,6 @@ const postComment = (req, res) => {
         .database()
         .ref()
         .update(updates);
-      firebase
-        .database()
-        .ref(`/people/${idIndex}/`)
-        .once("value")
-        .then(snap => {
-          res.json(snap.val());
-        });
     });
 };
 

@@ -20,6 +20,8 @@ import Planets from "../Components/Planets";
 import Planet from "../Components/Planet";
 import ErrorPage from "../Components/Error";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const useStyles = makeStyles({
   list: {
     width: 300,
@@ -38,7 +40,7 @@ function App() {
   const useGetData = (searchParam, setData, setConstData) => {
     useEffect(() => {
       axios
-        .get(`http://localhost:8080/${searchParam}/`)
+        .get(`${pingURL}/${searchParam}/`)
         .then(res => {
           setData(res.data);
           setConstData(res.data);
