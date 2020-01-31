@@ -20,9 +20,7 @@ const SubmittedComments = ({ comment, character }) => {
 
     window.location.reload();
   };
-
-  console.log(comment);
-
+  
   return (
     <div className="comment-container__comment">
       <p>Name: {comment.name}</p>

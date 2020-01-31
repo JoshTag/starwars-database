@@ -10,7 +10,7 @@ const getPeople = (req, res) => {
   if (!dbRefObject) {
     res.json({ error: "No Characters Found" });
   }
-  dbRefObject.on("value", snap => res.json(snap.val()));
+  dbRefObject.once("value", snap => res.json(snap.val()));
 };
 
 // Gets single person from people array
@@ -83,6 +83,14 @@ const postComment = (req, res) => {
         .database()
         .ref()
         .update(updates);
+
+      firebase
+        .database()
+        .ref(`/people/`)
+        .once("value")
+        .then(snap => {
+          res.json(snap.val());
+        });
     });
 };
 
