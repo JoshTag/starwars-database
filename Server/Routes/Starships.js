@@ -1,26 +1,46 @@
 const { Router } = require("express");
 const router = Router();
 const starships = require("../Data/Starships.json");
+const firebase = require("firebase/app");
+const database = firebase.database();
 
+// Gets all data for starships
 const getStarships = (req, res) => {
-  res.json(
-    starships.map(({ starship_id, name, model, starship_class }) => ({
-      starship_id,
-      name,
-      model,
-      starship_class
-    }))
-  );
+  const dbRefObject = database.ref().child("/starships");
+
+  if (!dbRefObject) {
+    res.json({ error: "No Starships Found" });
+  }
+  dbRefObject.on("value", snap => res.send(snap.val()));
 };
 
+// Gets single person from starship array
 const getSingleShip = (req, res) => {
-  const findID = starships.find(ship => ship.starship_id == req.params.starship_id);
+  let starshipList = [];
+  let idIndex;
+  firebase
+    .database()
+    .ref(`/starships/`)
+    .once("value")
+    .then(snap => {
+      starshipList = snap.val();
 
-  if (!findID) {
-    res.status(404).json({ error: "No Ship Found With That ID" });
-  }
+      const findID = starshipList.find(
+        starship => starship.starship_id == req.params.starship_id
+      );
+      idIndex = starshipList.indexOf(findID);
 
-  res.json(findID);
+      if (!findID) {
+        res.json({ error: "No Starship Found with the ID" });
+      }
+      firebase
+        .database()
+        .ref(`/starships/${idIndex}`)
+        .once("value")
+        .then(snap => {
+          res.json(snap.val());
+        });
+    });
 };
 
 router.get("/", getStarships);

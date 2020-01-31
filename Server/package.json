@@ -13,6 +13,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "firebase": "^7.7.0",
+    "firebase-admin": "^8.9.2",
     "mongoose": "^5.7.0",
     "shortid": "^2.2.14"
   }

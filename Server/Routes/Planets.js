@@ -1,31 +1,49 @@
 const { Router } = require("express");
 const router = Router();
 const planets = require("../Data/Planets.json");
+const firebase = require("firebase/app");
+const database = firebase.database();
 
+// Gets all data for planets
 const getPlanets = (req, res) => {
-  res.json(
-    planets.map(({ planet_id, name, population, climate, gravity }) => ({
-      planet_id,
-      name, 
-      population, 
-      climate, 
-      gravity
-    }))
-  );
+  const dbRefObject = database.ref().child("/planets");
+
+  if (!dbRefObject) {
+    res.json({ error: "No Planets Found" });
+  }
+  dbRefObject.on("value", snap => res.send(snap.val()));
 };
 
+// Gets single person from planet array
 const getSinglePlanet = (req, res) => {
-  const findID = planets.find(planet => planet.planet_id == req.params.planet_id);
+  let planetList = [];
+  let idIndex;
+  firebase
+    .database()
+    .ref(`/planets/`)
+    .once("value")
+    .then(snap => {
+      planetList = snap.val();
 
-  if (!findID) {
-    res.status(404).json({ error: "No Planet Found With That ID" });
-  }
+      const findID = planetList.find(
+        planet => planet.planet_id == req.params.planet_id
+      );
+      idIndex = planetList.indexOf(findID);
 
-  res.json(findID);
+      if (!findID) {
+        res.json({ error: "No Planet Found with the ID" });
+      }
+      firebase
+        .database()
+        .ref(`/planets/${idIndex}`)
+        .once("value")
+        .then(snap => {
+          res.json(snap.val());
+        });
+    });
 };
 
 router.get("/", getPlanets);
 router.get("/:planet_id", getSinglePlanet);
-
 
 module.exports = router;
