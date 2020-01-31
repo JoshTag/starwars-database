@@ -4,11 +4,13 @@ import CommentSection from "../CharacterComments";
 import "../../Styles/scss/_Master.scss";
 import "./Persons.scss";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const Person = props => {
   const [character, setCharacter] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:8080/people/${props.match.params.id}`)
+    axios(`${pingURL}/people/${props.match.params.id}`)
       .then(res => {
         setCharacter(res.data);
       })

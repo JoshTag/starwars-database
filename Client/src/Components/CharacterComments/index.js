@@ -3,6 +3,8 @@ import axios from "axios";
 import SubmittedComments from "../SubmittedComments";
 import "./CharacterComments.scss";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const CommentSection = ({ character, comments }) => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -15,14 +17,12 @@ const CommentSection = ({ character, comments }) => {
     };
 
     axios
-      .post(`http://localhost:8080/people/${character.character_id}/comments`, inputs())
+      .post(`${pingURL}/people/${character.character_id}/comments`, inputs())
       .catch(err => {
         alert(err);
       });
 
-    setTimeout(() => {
-      window.location.reload();
-    }, 300);
+    window.location.reload();
   };
 
   return (
@@ -55,7 +55,7 @@ const CommentSection = ({ character, comments }) => {
       </div>
       <div className="comment-container">
         {comments ? (
-          comments
+          Object.values(comments)
             .reverse()
             .map(comment => (
               <SubmittedComments
@@ -65,7 +65,7 @@ const CommentSection = ({ character, comments }) => {
               />
             ))
         ) : (
-          <div>LOADING...</div>
+          <p>There are currently no comments</p>
         )}
       </div>
     </section>

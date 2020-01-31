@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const Ship = props => {
   const [vehicle, setVehicle] = useState({});
 
   useEffect(() => {
-    axios(`http://localhost:8080/vehicles/${props.match.params.id}`)
+    axios(`${pingURL}/vehicles/${props.match.params.id}`)
       .then(res => {
         setVehicle(res.data);
       })

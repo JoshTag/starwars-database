@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+
 const SubmittedComments = ({ comment, character }) => {
   const formatDate = date => {
     let newDate = new Date(date);
@@ -10,16 +12,16 @@ const SubmittedComments = ({ comment, character }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `http://localhost:8080/people/${character.character_id}/comments/${comment.comment_id}`
+        `${pingURL}/people/${character.character_id}/comments/${comment.comment_id}`
       )
       .catch(err => {
         alert(err);
       });
-      
-      setTimeout(() => {
-        window.location.reload();
-      }, 300);
+
+    window.location.reload();
   };
+
+  console.log(comment);
 
   return (
     <div className="comment-container__comment">

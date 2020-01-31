@@ -7,6 +7,20 @@ const port = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// Firebase setup
+const firebase = require("firebase/app");
+const admin = require('firebase-admin');
+const serviceAccount = require("./serviceAccountKey.json");
+
+require("firebase/auth");
+require("firebase/firestore");
+require("firebase/database");
+
+firebase.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://starwars-database-81ddb.firebaseio.com'
+});
+
 // cors configuration
 const corsConfig = {
   origin: ["http://localhost:3000"]

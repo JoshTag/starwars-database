@@ -1,26 +1,46 @@
 const { Router } = require("express");
 const router = Router();
 const vehicles = require("../Data/Vehicles.json");
+const firebase = require("firebase/app");
+const database = firebase.database();
 
+// Gets all data for vehicles
 const getVechiles = (req, res) => {
-  res.json(
-    vehicles.map(({ vehicle_id, name, model, vehicle_class }) => ({
-      vehicle_id,
-      name,
-      model,
-      vehicle_class
-    }))
-  );
+  const dbRefObject = database.ref().child("/vehicles");
+
+  if (!dbRefObject) {
+    res.json({ error: "No Vehicles Found" });
+  }
+  dbRefObject.on("value", snap => res.send(snap.val()));
 };
 
+// Gets single person from vehicle array
 const getSingleVechile = (req, res) => {
-  const findID = vehicles.find(vehicle => vehicle.vehicle_id == req.params.vehicle_id);
+  let vehicleList = [];
+  let idIndex;
+  firebase
+    .database()
+    .ref(`/vehicles/`)
+    .once("value")
+    .then(snap => {
+      vehicleList = snap.val();
 
-  if (!findID) {
-    res.status(404).json({ error: "No Vehicle Found With That ID" });
-  }
+      const findID = vehicleList.find(
+        starship => starship.starship_id == req.params.starship_id
+      );
+      idIndex = vehicleList.indexOf(findID);
 
-  res.json(findID);
+      if (!findID) {
+        res.json({ error: "No Vehicle Found with the ID" });
+      }
+      firebase
+        .database()
+        .ref(`/vehicles/${idIndex}`)
+        .once("value")
+        .then(snap => {
+          res.json(snap.val());
+        });
+    });
 };
 
 router.get("/", getVechiles);
