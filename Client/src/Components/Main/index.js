@@ -23,6 +23,8 @@ const Main = () => {
       <animated.div className="img4" style={{ transform: props.xy.interpolate(trans4) }} />
       <animated.div className="img5" style={{ transform: props.xy.interpolate(trans5) }} />
       <animated.div id="stars" style={{ transform: props.xy.interpolate(transBackground) }} />
+      <p>&copy; Joshua Taguicana 2020</p>
+      <p>Made with help from www.swapi.com</p>
     </section>
   );
 };
