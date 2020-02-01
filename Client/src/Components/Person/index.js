@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import CommentSection from "../CharacterComments";
 import "../../Styles/scss/_Master.scss";
 import "./Persons.scss";
@@ -36,6 +37,7 @@ const Person = props => {
         <p>Eye Colour: {character.eye_color}</p>
         <p>Birth Year: {character.birth_year}</p>
         <CommentSection character={character} comments={character.comments} />
+        <Link to={"/characters"}className="back-btn" >&larr; Back</Link>
       </div>
     </>
   );

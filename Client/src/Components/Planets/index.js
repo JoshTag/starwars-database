@@ -5,8 +5,9 @@ import "../../Styles/scss/_Master.scss";
 const Planets = props => {
   const [planets, setPlanets] = useState([]);
   const [constPlanets, setConstPlanets] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
-  props.getData("planets", setPlanets, setConstPlanets);
+  props.getData("planets", setPlanets, setConstPlanets, loaded, setLoaded);
 
   const PlanetList = () => (
     <ul className="section-Container__list">
@@ -22,6 +23,10 @@ const Planets = props => {
       ))}
     </ul>
   )
+
+  const Loading = () => {
+    return loaded === false ? <p>Loading Data...</p> : <p>There is no planet by that name</p>
+  }
 
   return (
     <div className="section-Container">
@@ -41,12 +46,12 @@ const Planets = props => {
             props.search(event, constPlanets, planets, setPlanets);
           }}
         />
-        <button type="submit">Search</button>
       </form>
       {planets.length > 0 
         ? ( <PlanetList />) 
-        : ( <p>There is no planet by that name</p>)
+        : ( <Loading />)
       }
+      <Link to={"/"}className="back-btn" >&larr; Back</Link>
     </div>
   );
 };

@@ -6,8 +6,9 @@ import "./Character.scss";
 const Characters = props => {
   const [people, setPeople] = useState([]);
   const [constPeople, setConstPeople] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
-  props.getData("people", setPeople, setConstPeople);
+  props.getData("people", setPeople, setConstPeople, loaded, setLoaded);
 
   const CharacterList = () => (
     <ul className="section-Container__list">
@@ -25,6 +26,10 @@ const Characters = props => {
       ))}
     </ul>
   );
+
+  const Loading = () => {
+    return loaded === false ? <p>Loading Data...</p> : <p>There is no character by that name</p>
+  }
 
   return (
     <section className="section-Container">
@@ -47,8 +52,9 @@ const Characters = props => {
       </form>
       {people.length > 0 
         ? ( <CharacterList /> )
-        : ( <p className="search-none">There is no character by that name</p> )
+        : ( <Loading /> )
       }
+      <Link to={"/"}className="back-btn" >&larr; Back</Link>
     </section>
   );
 };

@@ -5,8 +5,9 @@ import "../../Styles/scss/_Master.scss";
 const Vehicles = props => {
   const [vehicles, setVehicles] = useState([]);
   const [constVehicles, setConstVehicles] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
-  props.getData("vehicles", setVehicles, setConstVehicles);
+  props.getData("vehicles", setVehicles, setConstVehicles, loaded, setLoaded);
 
   const VehicleList = () => (
     <ul className="section-Container__list">
@@ -27,6 +28,10 @@ const Vehicles = props => {
     </ul>
   );
 
+  const Loading = () => {
+    return loaded === false ? <p>Loading Data...</p> : <p>There is no vehicle by that name</p>
+  }
+
   return (
     <section className="section-Container">
       <div className="star-container">
@@ -34,6 +39,7 @@ const Vehicles = props => {
         <div className="character-stars" />
         <div className="character-stars" />
       </div>
+      <h2 className="section-Container__header">vehicles</h2>
       <form className="section-Container__search">
         <input
           className="section-Container__search__search-bar"
@@ -45,11 +51,11 @@ const Vehicles = props => {
           }}
         />
       </form>
-      <h2 className="section-Container__header">vehicles</h2>
       {vehicles.length > 0 
         ? ( <VehicleList /> ) 
-        : ( <p>There is no vehicle by that name</p>)
+        : ( <Loading /> )
       }
+      <Link to={"/"}className="back-btn" >&larr; Back</Link>
     </section>
   );
 };

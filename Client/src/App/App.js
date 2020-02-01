@@ -37,18 +37,19 @@ const useStyles = makeStyles({
 
 function App() {
   // Axios to get data
-  const useGetData = (searchParam, setData, setConstData) => {
+  const useGetData = (searchParam, setData, setConstData, load, setLoaded) => {
     useEffect(() => {
       axios
         .get(`${pingURL}/${searchParam}/`)
         .then(res => {
           setData(res.data);
           setConstData(res.data);
+          setLoaded(true)
         })
         .catch(err => {
           alert(err);
         });
-    }, [searchParam, setData, setConstData]);
+    }, [searchParam, setData, setConstData, load, setLoaded]);
   };
 
   // Search functionality

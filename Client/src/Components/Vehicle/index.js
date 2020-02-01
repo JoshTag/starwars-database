@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import "../../Styles/scss/_Master.scss";
 
 const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
 
@@ -30,6 +32,7 @@ const Ship = props => {
         <p>Passengers: {vehicle.passenger}</p>
         <p>Cargo Capacity: {vehicle.cargo_capacity}</p>
         <p>Vehicle Class: {vehicle.vehicle_class}</p>
+        <Link to={"/vehicles"}className="back-btn" >&larr; Back</Link>
       </div>
     </>
   );

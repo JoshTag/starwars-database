@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../Styles/scss/_Master.scss";
 
@@ -31,6 +32,7 @@ const Ship = props => {
         <p>Cargo Capacity: {ship.cargo_capacity}</p>
         <p>Hyperdrive Rating: {ship.hyperdrive_rating}</p>
         <p>Starship Class: {ship.starship_class}</p>
+        <Link to={"/starships"}className="back-btn" >&larr; Back</Link>
       </div>
     </>
   );

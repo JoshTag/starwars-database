@@ -5,8 +5,9 @@ import "../../Styles/scss/_Master.scss";
 const Starships = props => {
   const [starships, setStarships] = useState([]);
   const [constStarships, setConstStarships] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
-  props.getData("starships", setStarships, setConstStarships);
+  props.getData("starships", setStarships, setConstStarships, loaded, setLoaded);
 
   const StarshipList = () => (
     <ul className="section-Container__list">
@@ -24,6 +25,10 @@ const Starships = props => {
       ))}
     </ul>
   );
+
+  const Loading = () => {
+    return loaded === false ? <p>Loading Data...</p> : <p>There is no starship by that name</p>
+  }
 
   return (
     <section className="section-Container">
@@ -47,8 +52,9 @@ const Starships = props => {
 
       {starships.length > 0 
         ? ( <StarshipList /> ) 
-        : ( <p>There is no starship by that name</p> )
+        : ( <Loading /> )
       }
+      <Link to={"/"}className="back-btn" >&larr; Back</Link>
     </section>
   );
 };

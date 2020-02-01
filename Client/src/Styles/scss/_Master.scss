@@ -72,30 +72,25 @@ body {
   &__search {
     z-index: 100;
     margin-bottom: 60px;
-
-    @include tablet {
-      display: flex;
-      justify-content: center;
-    }
+    display: flex;
+    justify-content: center;
     
     &__search-bar {
       width: 100%;
+      max-width: 300px;
       resize: none;
       display: flex;
       height: 20px;
 
       @include tablet {
-        width: 300px;
+        width: 500px;
       }
     }
   }
 
   &__header {
+    text-align: center;
     @include site-header;
-    
-    @include tablet {
-      text-align: center;
-    }
   }
 
   &__list {
@@ -141,6 +136,18 @@ body {
       }
     }
   }
+
+  & p {
+    text-align: center;
+  }
+}
+
+.back-btn {
+  position: fixed;
+  top: 90vh;
+  right: 5%;
+  text-decoration: none;
+  color: $colour-yellow;
 }
 
 .individual-Container {

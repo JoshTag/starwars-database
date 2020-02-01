@@ -36,7 +36,7 @@
 
 .card-header {
   top: 30%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 100;
 
   @include tablet {
@@ -49,12 +49,17 @@
 }
 
 .img1 {
+  display: none;
   width: 300px;
   height: 300px;
   background-image: url("../../Assets/Images/death-star.svg");
   top: 40%;
   left: 70%;
   z-index: 50;
+
+  @include tablet {
+    display: flex;
+  }
 }
 
 .img2 {
@@ -68,12 +73,17 @@
 }
 
 .img3 {
+  display: none;
   width: 100px;
   height: 100px;
   background-image: url("../../Assets/Images/tie-fighter.svg");
   top: 45%;
   left: 40%;
   z-index: 50;
+
+    @include tablet {
+    display: flex;
+  }
 }
 
 .img4 {
@@ -81,17 +91,26 @@
   height: 150px;
   background-image: url("../../Assets/Images/millennium-falcon.svg");
   top: 50%;
-  left: 60%;
+  left: 30%;
   z-index: 50;
+
+  @include tablet {
+    left: 60%;
+  }
 }
 
 .img5 {
+  display: none;
   width: 300px;
   height: 300px;
   background-image: url("../../Assets/Images/dreadnought.svg");
   top: 50%;
   left: 10%;
   z-index: 50;
+
+  @include tablet {
+    display: flex;
+  }
 }
 
 #stars {

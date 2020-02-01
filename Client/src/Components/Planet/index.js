@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import "../../Styles/scss/_Master.scss";
 
 const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
 
@@ -28,6 +30,7 @@ const Planet = props => {
         <p>Terrain: {planet.terrain}</p>
         <p>Surface Water: {planet.surface_water}</p>
         <p>Population: {planet.population}</p>
+        <Link to={"/planets"}className="back-btn" >&larr; Back</Link>
       </div>
     </>
   );
