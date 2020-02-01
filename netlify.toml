@@ -14,7 +14,7 @@
 # deploy contexts will inherit these settings.
 [context.master.environment]
   # environment variables
-  REACT_APP_BACKEND_SERVER = "https://obscure-forest-18532.herokuapp.com/"
+  REACT_APP_BACKEND_SERVER = "https://obscure-forest-18532.herokuapp.com"
 
 
 [[redirects]]
