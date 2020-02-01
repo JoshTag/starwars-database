@@ -10,7 +10,6 @@ app.use(express.json());
 // Firebase setup
 const firebase = require("firebase/app");
 const admin = require('firebase-admin');
-const serviceAccount = require("./serviceAccountKey.json");
 
 require("firebase/auth");
 require("firebase/firestore");
