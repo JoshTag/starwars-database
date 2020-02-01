@@ -33,7 +33,7 @@ firebase.initializeApp({
 
 // cors configuration
 const corsConfig = {
-  origin: ["http://localhost:3000"]
+  origin: ["http://localhost:3000" ,"https://warcraftauctions.netlify.com"]
 };
 app.use(cors(corsConfig));
 
