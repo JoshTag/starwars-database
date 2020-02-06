@@ -65,6 +65,10 @@
   flex-direction: column;
   width: 290px;
 
+  @include tablet {
+    width: 400px;
+  }
+
   > div {
     margin: 20px 0;
     font-family: $site-font;
