@@ -23,9 +23,9 @@ const SubmittedComments = ({ comment, character }) => {
   
   return (
     <div className="comment-container__comment">
-      <p>Name: {comment.name}</p>
-      <p>Comment: {comment.comment}</p>
-      <p>{formatDate(comment.timestamp)}</p>
+      <p><span>Name:</span> {comment.name}</p>
+      <p><span>Date:</span> {formatDate(comment.timestamp)}</p>
+      <p><span>Comment:</span> {comment.comment}</p>
       <button className="comment-container__btn" onClick={handleDelete}>
         Delete
       </button>
