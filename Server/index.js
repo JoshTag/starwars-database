@@ -33,7 +33,7 @@ firebase.initializeApp({
 
 // cors configuration
 const corsConfig = {
-  origin: ["http://localhost:3000", "https://starwars-database.netlify.com"]
+  origin: ["http://localhost:3000", "https://starwars-database.netlify.app"]
 };
 app.use(cors(corsConfig));
 
