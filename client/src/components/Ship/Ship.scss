@@ -1,0 +1,13 @@
+@import "../../styles/scss/Master";
+
+.ship-Container {
+  padding: 16px;
+  
+  &__header {
+    @include site-header;
+  }
+
+  > p {
+    font-family: $site-font;
+  }  
+}
