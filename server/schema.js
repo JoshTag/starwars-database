@@ -64,6 +64,60 @@ const StarshipType = new GraphQLObjectType({
   })
 });
 
+// Vehicles Type
+const VehiclesType = new GraphQLObjectType({
+  name: "Vehicles",
+  fields: () => ({
+    name: { type: GraphQLString },
+    model: { type: GraphQLString },
+    vehicle_class: { type: GraphQLString },
+    url: { type: GraphQLString }
+  })
+});
+
+// Vehicle Type
+const VehicleType = new GraphQLObjectType({
+  name: "Vehicle",
+  fields: () => ({
+    name: { type: GraphQLString },
+    model: { type: GraphQLString },
+    manufacturer: { type: GraphQLString },
+    vehicle_class: { type: GraphQLString },
+    length: { type: GraphQLString },
+    crew: { type: GraphQLString },
+    passengers: { type: GraphQLString },
+    cargo_capacity: { type: GraphQLString },
+    cost_in_credits: { type: GraphQLString },
+    url: { type: GraphQLString }
+  })
+});
+
+// Planets Type
+const PlanetsType = new GraphQLObjectType({
+  name: "Planets",
+  fields: () => ({
+    name: { type: GraphQLString },
+    url: { type: GraphQLString }
+  })
+});
+
+// Planet Type
+const PlanetType = new GraphQLObjectType({
+  name: "Planet",
+  fields: () => ({
+    name: { type: GraphQLString },
+    rotation_period: { type: GraphQLString },
+    orbital_period: { type: GraphQLString },
+    diameter: { type: GraphQLString },
+    climate: { type: GraphQLString },
+    gravity: { type: GraphQLString },
+    terrain: { type: GraphQLString },
+    surface_water: { type: GraphQLString },
+    population: { type: GraphQLString },
+    url: { type: GraphQLString }
+  })
+});
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -105,6 +159,44 @@ const RootQuery = new GraphQLObjectType({
           .then(res => res.data);
       }
     },
+    vehicles: {
+      type: new GraphQLList(VehiclesType),
+      resolve(parent, args) {
+        return axios
+          .get("https://swapi.dev/api/vehicles/")
+          .then(res => res.data.results);
+      }
+    },
+    vehicle: {
+      type: VehicleType,
+      args: {
+        id: { type: GraphQLInt }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://swapi.dev/api/vehicles/${args.id}`)
+          .then(res => res.data);
+      }
+    },
+    planets: {
+      type: new GraphQLList(PlanetsType),
+      resolve(parent, args) {
+        return axios
+          .get("https://swapi.dev/api/planets/")
+          .then(res => res.data.results);
+      }
+    },
+    planet: {
+      type: PlanetType,
+      args: {
+        id: { type: GraphQLInt }
+      },
+      resolve(parent, args) {
+        return axios
+          .get(`https://swapi.dev/api/planets/${args.id}`)
+          .then(res => res.data);
+      }
+    }
   }
 });
 
