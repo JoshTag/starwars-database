@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:8080'}`;
+const pingURL = `${process.env.REACT_APP_BACKEND_SERVER || 'http://localhost:5000'}`;
 
 const SubmittedComments = ({ comment, character }) => {
   const formatDate = date => {

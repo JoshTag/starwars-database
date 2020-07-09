@@ -56,9 +56,11 @@ const StarshipType = new GraphQLObjectType({
     manufacturer: { type: GraphQLString },
     starship_class: { type: GraphQLString },
     length: { type: GraphQLString },
-    passengers: { type: GraphQLString },
     cargo_capacity: { type: GraphQLString },
     hyperdrive_rating: { type: GraphQLString },
+    max_atmosphering_speed: { type: GraphQLString },
+    passengers: { type: GraphQLString },
+    crew: { type: GraphQLString },
     cost_in_credits: { type: GraphQLString },
     url: { type: GraphQLString },
   }),
@@ -84,6 +86,7 @@ const VehicleType = new GraphQLObjectType({
     manufacturer: { type: GraphQLString },
     vehicle_class: { type: GraphQLString },
     length: { type: GraphQLString },
+    max_atmosphering_speed: { type: GraphQLString },
     crew: { type: GraphQLString },
     passengers: { type: GraphQLString },
     cargo_capacity: { type: GraphQLString },
@@ -123,7 +126,7 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     people: {
       type: new GraphQLList(PeopleType),
-      resolve(parent, args) {
+      resolve() {
         return cycleThroughPages("https://swapi.dev/api/people/", 9)
       },
     },
@@ -132,7 +135,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve(parent, args) {
+      resolve(_parent, args) {
         return axios
           .get(`https://swapi.dev/api/people/${args.id}`)
           .then(res => res.data)
@@ -140,7 +143,7 @@ const RootQuery = new GraphQLObjectType({
     },
     starships: {
       type: new GraphQLList(StarshipsType),
-      resolve(parent, args) {
+      resolve() {
         return cycleThroughPages("https://swapi.dev/api/starships/", 4)
       },
     },
@@ -149,7 +152,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve(parent, args) {
+      resolve(_parent, args) {
         return axios
           .get(`https://swapi.dev/api/starships/${args.id}`)
           .then(res => res.data)
@@ -157,7 +160,7 @@ const RootQuery = new GraphQLObjectType({
     },
     vehicles: {
       type: new GraphQLList(VehiclesType),
-      resolve(parent, args) {
+      resolve() {
         return cycleThroughPages("https://swapi.dev/api/vehicles/", 4)
       },
     },
@@ -166,7 +169,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve(parent, args) {
+      resolve(_parent, args) {
         return axios
           .get(`https://swapi.dev/api/vehicles/${args.id}`)
           .then(res => res.data)
@@ -174,7 +177,7 @@ const RootQuery = new GraphQLObjectType({
     },
     planets: {
       type: new GraphQLList(PlanetsType),
-      resolve(parent, args) {
+      resolve() {
         return cycleThroughPages("https://swapi.dev/api/planets/", 6)
       },
     },
@@ -183,7 +186,7 @@ const RootQuery = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve(parent, args) {
+      resolve(_parent, args) {
         return axios
           .get(`https://swapi.dev/api/planets/${args.id}`)
           .then(res => res.data)

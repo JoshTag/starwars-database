@@ -1,36 +1,24 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../../styles/scss/_Master.scss";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import gql from "graphql-tag"
+import { Query } from "react-apollo"
+import { getID } from "./../../utils/extractID"
+import "../../styles/scss/_Master.scss"
 
-const Vehicles = props => {
-  const [vehicles, setVehicles] = useState([]);
-  const [constVehicles, setConstVehicles] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-
-  props.getData("vehicles", setVehicles, setConstVehicles, loaded, setLoaded);
-
-  const VehicleList = () => (
-    <ul className="section-Container__list">
-      {vehicles.map(vehicle => {
-        return (
-          <li className="section-Container__list__item" key={vehicle.vehicle_id}>
-            <Link
-              className="section-Container__list__item--link"
-              to={`/vehicles/${vehicle.vehicle_id}`}
-            >
-              <p>{vehicle.name}</p>
-              <p>Model: {vehicle.model}</p>
-              <p>Class: {vehicle.vehicle_class}</p>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  );
-
-  const Loading = () => {
-    return loaded === false ? <p>Loading Data...</p> : <p>There is no vehicle by that name</p>
+const VEHICLES_QUERY = gql`
+  query VehiclesQuery {
+    vehicles {
+      name
+      model
+      vehicle_class
+      url
+    }
   }
+`
+
+const Vehicles = ({ search }) => {
+  const [vehicles, setVehicles] = useState([])
+  const [constVehicles, setConstVehicles] = useState([])
 
   return (
     <section className="section-Container">
@@ -40,24 +28,53 @@ const Vehicles = props => {
         <div className="character-stars" />
       </div>
       <h2 className="section-Container__header">vehicles</h2>
-      <form className="section-Container__search">
-        <input
-          className="section-Container__search__search-bar"
-          name="search"
-          placeholder="Search Vehicle..."
-          required
-          onKeyUp={event => {
-            props.search(event, constVehicles, vehicles, setVehicles);
-          }}
-        />
-      </form>
-      {vehicles.length > 0 
-        ? ( <VehicleList /> ) 
-        : ( <Loading /> )
-      }
-      <Link to={"/"}className="back-btn" >&larr; Back</Link>
-    </section>
-  );
-};
+      <Query query={VEHICLES_QUERY}>
+        {({ loading, error, data }) => {
+          if (loading) return <h4>Loading...</h4>
+          if (error) alert(error)
 
-export default Vehicles;
+          return (
+            <>
+              <form className="section-Container__search">
+                <input
+                  className="section-Container__search__search-bar"
+                  name="search"
+                  placeholder="Search Vehicle..."
+                  required
+                  onKeyUp={event => {
+                    search(event, constVehicles, vehicles, setVehicles)
+                  }}
+                />
+              </form>
+              <ul className="section-Container__list">
+                {data.vehicles.map(vehicle => {
+                  const { name, model, vehicle_class, url } = vehicle
+                  return (
+                    <li
+                      className="section-Container__list__item"
+                      key={getID(url, 27)}
+                    >
+                      <Link
+                        className="section-Container__list__item--link"
+                        to={`/vehicles/${getID(url, 30)}`}
+                      >
+                        <p>{name}</p>
+                        <p>Model: {model}</p>
+                        <p>Class: {vehicle_class}</p>
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </>
+          )
+        }}
+      </Query>
+      <Link to={"/"} className="back-btn">
+        &larr; Back
+      </Link>
+    </section>
+  )
+}
+
+export default Vehicles

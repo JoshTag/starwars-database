@@ -4,21 +4,22 @@ import gql from "graphql-tag"
 import { Query } from "react-apollo"
 import { getID } from "./../../utils/extractID"
 import "../../styles/scss/_Master.scss"
+import "./Character.scss"
 
-const STARSHIPS_QUERY = gql`
-  query StarshipsQuery {
-    starships {
+const PEOPLE_QUERY = gql`
+  query PeopleQuery {
+    people {
       name
-      model
-      starship_class
+      gender
+      birth_year
       url
     }
   }
 `
 
-const Starships = ({ search }) => {
-  const [starships, setStarships] = useState([])
-  const [constStarships, setConstStarships] = useState([])
+const Characters = ({ search }) => {
+  const [people, setPeople] = useState([])
+  const [constPeople, setConstPeople] = useState([])
 
   return (
     <section className="section-Container">
@@ -27,8 +28,8 @@ const Starships = ({ search }) => {
         <div className="character-stars" />
         <div className="character-stars" />
       </div>
-      <h2 className="section-Container__header">starships</h2>
-      <Query query={STARSHIPS_QUERY}>
+      <h2 className="section-Container__header">Characters</h2>
+      <Query query={PEOPLE_QUERY}>
         {({ loading, error, data }) => {
           if (loading) return <h4>Loading...</h4>
           if (error) alert(error)
@@ -39,28 +40,28 @@ const Starships = ({ search }) => {
                 <input
                   className="section-Container__search__search-bar"
                   name="search"
-                  placeholder="Search Starships..."
+                  placeholder="Search Character..."
                   required
                   onKeyUp={event => {
-                    search(event, constStarships, starships, setStarships)
+                    search(event, constPeople, people, setPeople)
                   }}
                 />
               </form>
               <ul className="section-Container__list">
-                {data.starships.map(ship => {
-                    const { name, model, starship_class, url } = ship
+                {data.people.map(person => {
+                    const { name, gender, birth_year, url } = person
                     return (
                       <li
                         className="section-Container__list__item"
-                        key={getID(url, 31)}
+                        key={`person ${getID(url, 28)}`}
                       >
                         <Link
                           className="section-Container__list__item--link"
-                          to={`/starships/${getID(url, 31)}`}
+                          to={`/characters/${getID(url, 28)}`}
                         >
                           <p>{name.toLowerCase()}</p>
-                          <p>Model: {model}</p>
-                          <p>Class: {starship_class}</p>
+                          <p>Birth Year: {birth_year}</p>
+                          <p>Gender: {gender}</p>
                         </Link>
                       </li>
                     )
@@ -77,4 +78,4 @@ const Starships = ({ search }) => {
   )
 }
 
-export default Starships
+export default Characters
