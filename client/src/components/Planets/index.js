@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import gql from "graphql-tag"
-import { Query } from "react-apollo"
-import { getID } from "./../../utils/extractID"
+import { useQuery } from "@apollo/react-hooks"
+import { getID } from "../../utils/utils"
 import "../../styles/scss/_Master.scss"
 
 const PLANETS_QUERY = gql`
@@ -14,9 +14,11 @@ const PLANETS_QUERY = gql`
   }
 `
 
-const Planets = ({ search }) => {
-  const [planets, setPlanets] = useState([])
-  const [constPlanets, setConstPlanets] = useState([])
+const Planets = () => {
+  const { loading, error, data } = useQuery(PLANETS_QUERY)
+
+  if (loading) return "Loading..."
+  if (error) return `Error! ${error.message}`
 
   return (
     <div className="section-Container">
@@ -26,46 +28,21 @@ const Planets = ({ search }) => {
         <div className="character-stars" />
       </div>
       <h2 className="section-Container__header">Planets</h2>
-      <Query query={PLANETS_QUERY}>
-        {({ loading, error, data }) => {
-          if (loading) return <h4>Loding...</h4>
-          if (error) alert(error)
-
+      <ul className="section-Container__list">
+        {data.planets.map(planet => {
+          const { name, url } = planet
           return (
-            <>
-              <form className="section-Container__search">
-                <input
-                  className="section-Container__search__search-bar"
-                  name="search"
-                  placeholder="Search Character..."
-                  required
-                  onKeyUp={event => {
-                    search(event, constPlanets, planets, setPlanets)
-                  }}
-                />
-              </form>
-              <ul className="section-Container__list">
-                {data.planets.map(planet => {
-                  const { name, url } = planet
-                  return (
-                  <li
-                    className="section-Container__list__item"
-                    key={getID(url, 29)}
-                  >
-                    <Link
-                      className="section-Container__list__item--link"
-                      to={`/planets/${getID(url, 29)}`}
-                    >
-                      <p id="planet-list-item">{planet.name}</p>
-                    </Link>
-                  </li>
-                  )
-                })}
-              </ul>
-            </>
+            <li className="section-Container__list__item" key={getID(url, 29)}>
+              <Link
+                className="section-Container__list__item--link"
+                to={`/planets/${getID(url, 29)}`}
+              >
+                <p id="planet-list-item">{name}</p>
+              </Link>
+            </li>
           )
-        }}
-      </Query>
+        })}
+      </ul>
       <Link to={"/"} className="back-btn">
         &larr; Back
       </Link>

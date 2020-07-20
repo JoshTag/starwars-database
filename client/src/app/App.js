@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import ApolloClient from "apollo-boost"
 import { ApolloProvider } from "react-apollo"
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
@@ -41,7 +41,6 @@ const useStyles = makeStyles({
 })
 
 function App() {
-
   // Search functionality
   const searchData = (event, constData, data, setData) => {
     event.preventDefault()
@@ -123,9 +122,7 @@ function App() {
           <Route
             path="/starships"
             exact
-            render={() => (
-              <Starships search={searchData} />
-            )}
+            render={() => <Starships search={searchData} />}
           />
           <Route path="/starships/:id" render={props => <Ship {...props} />} />
           <Route
